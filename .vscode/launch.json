@@ -1,0 +1,39 @@
+{
+    // Use IntelliSense to learn about possible attributes.
+    // Hover to view descriptions of existing attributes.
+    // For more information, visit: https://go.microsoft.com/fwlink/?linkid=830387
+    "version": "0.2.0",
+    "configurations": [
+        {
+            "type": "java",
+            "name": "CodeLens (Launch) - BasicTypes",
+            "request": "launch",
+            "mainClass": "SampleJavaCodes.Basics.BasicTypes",
+            "projectName": "SampleJavaCodes"
+        },
+        {
+            "type": "java",
+            "name": "Debug (Launch) - Current File",
+            "request": "launch",
+            "mainClass": "${file}"
+        },
+        {
+            "type": "java",
+            "name": "Debug (Launch)-BasicTypes",
+            "request": "launch",
+            "mainClass": "BasicTypes"
+        },
+        {
+            "type": "java",
+            "name": "Debug (Launch)-Example1",
+            "request": "launch",
+            "mainClass": "Example1"
+        },
+        {
+            "type": "java",
+            "name": "Debug (Launch)-Example11",
+            "request": "launch",
+            "mainClass": "Example11"
+        }
+    ]
+}
