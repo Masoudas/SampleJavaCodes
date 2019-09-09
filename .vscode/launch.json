@@ -6,6 +6,41 @@
     "configurations": [
         {
             "type": "java",
+            "name": "CodeLens (Launch) - StringBufferExample",
+            "request": "launch",
+            "mainClass": "SampleJavaCodes.StringClass.StringBufferExample",
+            "projectName": "SampleJavaCodes"
+        },
+        {
+            "type": "java",
+            "name": "CodeLens (Launch) - Fundamentals",
+            "request": "launch",
+            "mainClass": "SampleJavaCodes.StringClass.Fundamentals",
+            "projectName": "SampleJavaCodes"
+        },
+        {
+            "type": "java",
+            "name": "CodeLens (Launch) - Fundamentals",
+            "request": "launch",
+            "mainClass": "SampleJavaCodes.Strings.Fundamentals",
+            "projectName": "SampleJavaCodes"
+        },
+        {
+            "type": "java",
+            "name": "CodeLens (Launch) - StringFundamentals",
+            "request": "launch",
+            "mainClass": "SampleJavaCodes.Strings.StringFundamentals",
+            "projectName": "SampleJavaCodes"
+        },
+        {
+            "type": "java",
+            "name": "CodeLens (Launch) - Example1",
+            "request": "launch",
+            "mainClass": "SampleJavaCodes.Basics.Example1",
+            "projectName": "SampleJavaCodes"
+        },
+        {
+            "type": "java",
             "name": "CodeLens (Launch) - BasicTypes",
             "request": "launch",
             "mainClass": "SampleJavaCodes.Basics.BasicTypes",

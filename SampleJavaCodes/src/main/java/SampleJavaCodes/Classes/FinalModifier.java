@@ -10,4 +10,21 @@ class WithFinal{
     public WithFinal() {
         y = 20;
     }
+
+    public void methodWithFinal(final int x, final Helper helper) {
+        // When the input to a method is final, its content cannot be changed.
+        helper.x = 20;  // When a reference variable is final, its content can be changed, but not the reference value itself.
+        //helper = new Helper();
+    }
+
+    final Helper returningFinal(){
+        // This method is final This does not affect the return value, it means that this the last override of the method,
+        // and it cannot be overridden anymore.
+        return new Helper();
+    }
+
+}
+
+class Helper{
+    int x = 10;
 }

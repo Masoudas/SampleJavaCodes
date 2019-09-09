@@ -1,4 +1,4 @@
-package EventHandling;
+package SampleJavaCodes.EventHandling;
 
 import java.awt.event.*;
 
