@@ -61,7 +61,7 @@ public class BasicTypes {
         arr4[2] = new int[3];
 
         // The following type inferences will start from JDK 10.
-        //var variable = "The type will be variable";
+        var variable = "The type will be variable";
         
 
         // Also note that

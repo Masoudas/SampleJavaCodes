@@ -7,6 +7,7 @@ package SampleJavaCodes.Basics;
  * JAVA SE: It means java standard edition.
  * When we type java -version, it gives us the run-time environment and the standard version. Typing javac -version gives us the development kit version.
  * 
+ * Note that the commands java, jdb, javac, and javah are all parts JDK. 
  * 
  * The name of the file in java is very important. In java, a source file is a compilation unit.
  * By convention, the name of the main class inside the file must match the filename,

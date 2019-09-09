@@ -6,6 +6,13 @@
     "configurations": [
         {
             "type": "java",
+            "name": "CodeLens (Launch) - VariableLengthMethods",
+            "request": "launch",
+            "mainClass": "SampleJavaCodes.Classes.VariableLengthMethods",
+            "projectName": "SampleJavaCodes"
+        },
+        {
+            "type": "java",
             "name": "CodeLens (Launch) - StringBufferExample",
             "request": "launch",
             "mainClass": "SampleJavaCodes.StringClass.StringBufferExample",

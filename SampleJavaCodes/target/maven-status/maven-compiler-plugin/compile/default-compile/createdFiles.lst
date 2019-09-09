@@ -1,14 +1,3 @@
-EventHandling/ApplyBtnListener.class
-EventHandling/Example1.class
-EventHandling/MyWindowAdaptor.class
-EventHandling/ImageExcerpterGUI.class
-EventHandling/Example3.class
-EventHandling/AnotherWindowAdaptor.class
-EventHandling/Examples.class
-EventHandling/WindowClosingListener.class
-EventHandling/SecondKeyEventListener.class
-EventHandling/OkBtnListener.class
-EventHandling/KeyEventListener.class
-EventHandling/SourceOFEvents.class
-EventHandling/CancelBtnListener.class
-EventHandling/App.class
+SampleJavaCodes/Basics/Example1.class
+SampleJavaCodes/Basics/Example11.class
+SampleJavaCodes/Basics/BasicTypes.class
