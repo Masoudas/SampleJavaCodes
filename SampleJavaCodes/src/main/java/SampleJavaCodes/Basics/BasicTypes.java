@@ -4,7 +4,8 @@
 package SampleJavaCodes.Basics;
 
 public class BasicTypes {
-
+    Example11 example11 = new Example11();  // We see that Example11 class eventhough private, can be accessed in the same (sub)package.
+    
     public static void main(String[] args) {
         // There's no unsigned variable in java.
         // Note that every decimal literal is integer by itself.

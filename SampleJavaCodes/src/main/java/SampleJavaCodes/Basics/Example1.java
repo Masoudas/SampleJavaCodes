@@ -32,6 +32,7 @@ public class Example1 {
 }
 
 class Example11 {
+    protected int x = 10;
     public static void main(String[] args) {        
         for (String s : args) {
             System.out.println("Yo class two! " + s + " and len is " + s.length());
