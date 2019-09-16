@@ -3,10 +3,15 @@
  */
 package SampleJavaCodes.Basics;
 
+import java.util.Arrays;
+
 public class BasicTypes {
     Example11 example11 = new Example11();  // We see that Example11 class eventhough private, can be accessed in the same (sub)package.
     
     public static void main(String[] args) {
+        BasicTypes bTypes = new BasicTypes();
+        bTypes.arrayManipulation();
+
         // There's no unsigned variable in java.
         // Note that every decimal literal is integer by itself.
         byte byte1 = 10; // one byte
@@ -62,7 +67,7 @@ public class BasicTypes {
         arr4[2] = new int[3];
 
         // The following type inferences will start from JDK 10.
-        var variable = "The type will be variable";
+        //var variable = "The type will be variable";
         
 
         // Also note that
@@ -110,5 +115,19 @@ public class BasicTypes {
             
         }
 
+    }
+
+    public void arrayManipulation() {
+        // There are several ways to initialize an array. Consider this 
+        int[] arr = new int[10];
+        Arrays.fill(arr, 20);   // Well this is one method to initialize all to a particular value.
+        
+        // Copying two arrays.
+        int[] cpyarr = new int[6];
+        cpyarr = Arrays.copyOfRange(arr, 4, 10);
+        for (int var : cpyarr) {
+            System.out.println(var);
+            
+        }
     }
 }
