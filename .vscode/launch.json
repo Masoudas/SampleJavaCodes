@@ -6,6 +6,27 @@
     "configurations": [
         {
             "type": "java",
+            "name": "CodeLens (Launch) - MatchingWithRegular",
+            "request": "launch",
+            "mainClass": "SampleJavaCodes.StringClass.Regex.MatchingWithRegular",
+            "projectName": "SampleJavaCodes"
+        },
+        {
+            "type": "java",
+            "name": "CodeLens (Launch) - PatternExample",
+            "request": "launch",
+            "mainClass": "SampleJavaCodes.StringClass.Regex.PatternExample",
+            "projectName": "SampleJavaCodes"
+        },
+        {
+            "type": "java",
+            "name": "CodeLens (Launch) - PatternExample",
+            "request": "launch",
+            "mainClass": "PatternExample",
+            "projectName": "SampleJavaCodes"
+        },
+        {
+            "type": "java",
             "name": "CodeLens (Launch) - VariableLengthMethods",
             "request": "launch",
             "mainClass": "SampleJavaCodes.Classes.VariableLengthMethods",

@@ -53,16 +53,17 @@ public boolean isSame(AverageCalculator<T> t){
 
 To solve this problem, we use the wildtype argument. It allows the generic type to be as we desire,
 and not follow the class argument.
-Interestingly enough, we can bind the wildcards too. The notation is the same as binding a class.
+Interestingly enough, we can bind the wildcards too. The notation is the same as binding a 
+normal generic with a class.
 Now, we may bind a wild card from above or below:
 
     1- If we use <? extends ClassType>, then we can use ClassType and its subclasses. This is called
-       binding from above, or bounded above.
+       binding from above, or bounded above (read ? must exten ClassType).
     
     2- If we use <? super ClassType>, then we can use ClassType and its superclasses. This is called
-       binding from below, or bounded above.       
+       binding from below, or bounded above (read ? must be the super class of ClassType).
     
-This is very natural, right.
+This is very natural.
 Be careful about erasure of methods with generics though. If we overload with bounded above or bounded
 below generics, we may get overlapping situations, which is problematic, and cause error, like the following
 example:

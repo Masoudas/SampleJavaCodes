@@ -27,6 +27,8 @@ Now, when defining the generic types, we can bound the type, using the keyword e
 We best define a superclass, which nicely bounds the types, and allows several subtypes to be used.
 For example, in the following case, we use the Number class, which is the super class of Integer, Double 
 and so forth.
+
+Note that we cannot bound a generic from below, like we do a wild card. I have no idea why!
 */
 
 package SampleJavaCodes.Generics;

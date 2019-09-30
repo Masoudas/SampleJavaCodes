@@ -81,6 +81,21 @@ class ExampleWithGenerics {
 * When we talk about the type safety of generics, we mean that a generic
 * of for example type Integer cannot be assigned to a generic of type
 * string. This for example is not the case if we used objects, or RAW types,
-which will be discussed later.
-
+RAW types were provided to make transition from the era of no generics (JDK5)
+to the era of with generics possible (below).
+Anyways, don't use raw types
 */
+
+/**
+ * 1_Fundamentals
+ */
+class RAWTypes {
+    public static void main(String[] args) {
+        // Bizzare syntax
+        Example ex = new Example(Integer.valueOf(5));        
+
+
+    }
+
+    
+}
