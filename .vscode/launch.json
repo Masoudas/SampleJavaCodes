@@ -6,6 +6,20 @@
     "configurations": [
         {
             "type": "java",
+            "name": "CodeLens (Launch) - FileByteRead",
+            "request": "launch",
+            "mainClass": "SampleJavaCodes.IO.FileByteRead",
+            "projectName": "SampleJavaCodes"
+        },
+        {
+            "type": "java",
+            "name": "CodeLens (Launch) - FileByteWriter",
+            "request": "launch",
+            "mainClass": "SampleJavaCodes.IO.FileByteWriter",
+            "projectName": "SampleJavaCodes"
+        },
+        {
+            "type": "java",
             "name": "CodeLens (Launch) - OutputStreamer",
             "request": "launch",
             "mainClass": "SampleJavaCodes.IO.OutputStreamer",

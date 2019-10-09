@@ -48,6 +48,8 @@ class OutputStreamer {
          * flushingOn controls whether Java flushes the output stream every time a 
          * println( ) method (among others) is called. If flushingOn is true, flushing 
          * automatically takes place. If false, flushing is not automatic.
+         * 
+         * PrintWriter is a subclass of Writer class!
          */
         PrintWriter printWriter = new PrintWriter(System.out, true);
         printWriter.println("This string is of course prints normally.");
