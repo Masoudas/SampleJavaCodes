@@ -183,11 +183,15 @@ class FileByteRead {
         // Again, note the difference with the previous method. We put the resource as
         // an argument for the try clause, hence we don't need to close it. But we catch
         // the exceptions and so forth.
+
+        // It is also possible to manage several resources in one try block.
         int data;
         String path = "SampleJavaCodes/src/main/java/SampleJavaCodes/IO/SampleText.txt";
         try (FileInputStream fStream = new FileInputStream(path)) {
-        //try (var fStream = new FileInputStream(path)){ // Also, imlplicit type
-            // inference is possible.
+        //try (var fStream = new FileInputStream(path)){ // Also, imlplicit type inference is possible.
+        //try (FileInputStream fStream = new FileInputStream(path);
+        //        FileInputStream fStream1 = new FileInputStream(path)) {
+            
 
             data = fStream.read();
             while (data != -1) {
