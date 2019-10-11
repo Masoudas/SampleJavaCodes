@@ -3,9 +3,10 @@
  * meaning a file on a disk.
  * 
  * Here's some constructor formats:
- * File f1 = new File("/"); The path of the file. This is the directory.
-   File f2 = new File("/", "f2"); The path and the filename
-   File f3 = new File(f1, "f2");    This is self-explanotary.
+ * File f1 = new File("./"); Current working directory
+   File f2 = new File("/", "f2"); We add f2 to the cwd
+   File f3 = new File(f1, "f2");    We add f2 to the cwd, using the file class.
+   File f4 = new File(f1, "f2.txt");    We add f2.txt to the file class. 
 
    """ Use the . to create in the relative path of the project.
 
@@ -17,17 +18,9 @@ package SampleJavaCodes.IO;
 import java.io.File;
 import java.io.FilenameFilter;
 import java.io.IOException;
+import java.io.PrintWriter;
 
 class ManipulateFiles {
-    public static void main(String[] args) {
-        ManipulateFiles mFiles = new ManipulateFiles();
-        //mFiles.createFile();
-
-        mFiles.generalMethods();
-        mFiles.utilityMethods();
-        mFiles.FilterFileNames();
-    }
-
     public void createFile(){   
         // We create the file, either with or without type.
         // If file alreay exists, returns false.
@@ -46,18 +39,11 @@ class ManipulateFiles {
 
     public void generalMethods() {
         File f1 = new File("./SampleJavaCodes");
-
+        p("The total resolved path is: " +f1.getPath());
         p("Exists:" + f1.exists());
         p("Absolute path: " + f1.getAbsolutePath());
         p("File names: " + f1.getName());
         p("get parent directory: " + f1.getParent());
-
-        // Listing the files.
-        String[] str = f1.list();
-        for (String str1 : str) {
-            p("Files inside the folder: " + str1);    
-        }
-        
         p("Is file:" + f1.isFile());    // There are particular things that can not be files.
         p("Can read: " + f1.canRead()); // Do we have read permission?
         p("Can write: " + f1.canWrite());   // Sure
@@ -66,6 +52,19 @@ class ManipulateFiles {
 
         p("How much space is left in this partition:" + f1.getUsableSpace() + " Bytes");
         p("How much space is left in this partition:" + f1.getUsableSpace()/1024/1024/1024 + " GB");
+
+        // Listing the files in a directory as string.
+        String[] str = f1.list();
+        for (String str1 : str) {
+            p("Files and folders inside the folder: " + str1);    
+        }      
+
+        // The following method does the same, but returns an array of File classes
+        // rather than strings.
+        File[] files = f1.listFiles(); // There are overloads for filtering as well.
+        for (File file : files) {
+            p("Files and folders inside the folder using the Files array: " + file.getName());    
+        }      
 
         f1.toPath();    // Returns a Path object, which is part of the NIO library.
     }
@@ -91,6 +90,21 @@ class ManipulateFiles {
             p("File was deleted.");
         }
 
+        // We can create a folder using the mkdir method.
+        // This method creates the folder if the entire path exists.
+        // To make the folders for the entire path, we use mkdirs().
+        boolean folderCreated;
+        File f2 = new File("./");
+        File f3 = new File(f2, "TempFolder");   // Just to give an idea of how we add stuff.
+        folderCreated = f3.mkdir(); 
+        f3.delete();
+        
+        PrintWriter pr = new PrintWriter(System.out);
+        pr.println(folderCreated);
+
+        // folderCreated = f1.mkdirs(); This creates all the folders along the path
+        // if they don't exist.
+
     }
 
     private void FilterFileNames(){
@@ -98,6 +112,7 @@ class ManipulateFiles {
         File f1 = new File("./SampleJavaCodes/src/main/java/SampleJavaCodes/Basics");
 
         if (!f1.exists()) return;
+        
         FilenameFilter filter = new FilterExtension("java");    // The FilenameFilter is
                 // an interface. FilterExtension is a class implemented below here, by me :D!
         String[] str = f1.list(filter);
@@ -108,6 +123,14 @@ class ManipulateFiles {
 
     }
 
+    public static void main(String[] args) {
+        ManipulateFiles mFiles = new ManipulateFiles();
+        //mFiles.createFile();
+
+        mFiles.generalMethods();
+        mFiles.utilityMethods();
+        mFiles.FilterFileNames();
+    }
 
     static void p(String str){
         System.out.println(str);

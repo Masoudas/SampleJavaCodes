@@ -174,7 +174,7 @@ class FileByteRead {
 
     public void readWithAutomaticClosing() {
         // So we put the resource in the try clause. The resource must implement the
-        // AutoClosable class in the java.io library, which Reader and Writer child
+        // AutoClosable class in the java.lang library, which Reader and Writer child
         // classes do.
 
         // Note that the resource variable in this example is final.

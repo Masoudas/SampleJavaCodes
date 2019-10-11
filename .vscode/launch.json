@@ -6,6 +6,13 @@
     "configurations": [
         {
             "type": "java",
+            "name": "CodeLens (Launch) - FileOutputStreamExample",
+            "request": "launch",
+            "mainClass": "SampleJavaCodes.IO.FileOutputStreamExample",
+            "projectName": "SampleJavaCodes"
+        },
+        {
+            "type": "java",
             "name": "CodeLens (Launch) - ManipulateFiles",
             "request": "launch",
             "mainClass": "SampleJavaCodes.IO.ManipulateFiles",

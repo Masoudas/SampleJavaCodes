@@ -7,7 +7,7 @@
  * Byte streams provide a convenient means for handling input and output 
  * of bytes. Byte streams are used, for example, when reading or writing 
  * binary data.
- *.Main classes: InputStream and OutputStream 
+ *.Main abstract classes: InputStream and OutputStream 
  * abstract classes have methods read() and write() that can be used.
  * As an example, System.out and System.in methods both are derived 
  * from the InputStream and OutputStream
@@ -16,12 +16,11 @@
  * output of characters. They use Unicode and, therefore, can be 
  * internationalized. Character streams are normally better in terms 
  * of performance and such. But at the lowest level, all I/O is still byte-oriented
- * Main classes: InputStreamReader, OutputStreamReader, BufferReader, BufferedWriter
+ * Main abstract classes: Reader, Writer
+ * Other classes: InputStreamReader, OutputStreamReader, BufferReader, BufferedWriter
  *
  * 
- * Reader and Writer are the two abstract classes at the top
- * of the hierarchy of these classes.
-  *  
+ *  
  * 
  * As we know, all Java programs automatically import the java.lang package.
  * The System class in lang encapsulates several aspects 
@@ -66,7 +65,7 @@ class SystemUse {
         // One of its concrete subclasses is InputStreamReader, which converts bytes to
         // characters. It has the constructor InputStreamReader(InputStream
         // inputStream).
-
+        
         // This is the documentation of the InputStreamReader:
         // An InputStreamReader is a bridge from byte streams to character streams:
         // It reads bytes and decodes them into characters using a specified charset.
