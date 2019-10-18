@@ -6,6 +6,41 @@
     "configurations": [
         {
             "type": "java",
+            "name": "CodeLens (Launch) - IteratorExample",
+            "request": "launch",
+            "mainClass": "SampleJavaCodes.UtilLibrary.IteratorExample",
+            "projectName": "SampleJavaCodes"
+        },
+        {
+            "type": "java",
+            "name": "CodeLens (Launch) - TreeSetExample",
+            "request": "launch",
+            "mainClass": "SampleJavaCodes.UtilLibrary.TreeSetExample",
+            "projectName": "SampleJavaCodes"
+        },
+        {
+            "type": "java",
+            "name": "CodeLens (Launch) - LinkedHashSetExample",
+            "request": "launch",
+            "mainClass": "SampleJavaCodes.UtilLibrary.LinkedHashSetExample",
+            "projectName": "SampleJavaCodes"
+        },
+        {
+            "type": "java",
+            "name": "CodeLens (Launch) - HashSetExample",
+            "request": "launch",
+            "mainClass": "SampleJavaCodes.UtilLibrary.HashSetExample",
+            "projectName": "SampleJavaCodes"
+        },
+        {
+            "type": "java",
+            "name": "CodeLens (Launch) - LinkedListExample",
+            "request": "launch",
+            "mainClass": "SampleJavaCodes.UtilLibrary.LinkedListExample",
+            "projectName": "SampleJavaCodes"
+        },
+        {
+            "type": "java",
             "name": "CodeLens (Launch) - ArrayListExample",
             "request": "launch",
             "mainClass": "SampleJavaCodes.UtilLibrary.ArrayListExample",

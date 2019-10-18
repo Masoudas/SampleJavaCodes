@@ -11,7 +11,8 @@
  * 
  * Bascially, we have interfaces for, and then implementations of those interfaces.
  * Interfaces:
- * 1- Collection: The top level interface.
+ * 1- Collection: The top level interface. Note that collection types do not allow primitive
+ *                types to be defined. We can only use reference types.
  * 2- List: The List interface extends Collection and declares the behavior of a collection 
  *          that stores a sequence of elements. Elements can be inserted or accessed by 
  *          their position in the list, using a zero-based index. A list may contain duplicate 
@@ -39,4 +40,12 @@
  * there are actual implementations, like ArrayList, LinkedList, HashTable, EnumSet and so forth.
  * The collection classes are not synchronized, but it is possible to obtain synchronized
  * versions as well,
+ * 
+ * 
+ * So when we want to use these collection classes, we must ask ourselves what we seek.
+ * 1- If we seek to access elements with indexing, then we use classes that have a List
+ *    in their keyword.
+ * 2- If we seek No repetition, then we use classes with Set.
+ * 3- If we seek HashLike access, then classes with Hash.
+ * 4- Tree like, we use classes that have the name Tree.
  */
