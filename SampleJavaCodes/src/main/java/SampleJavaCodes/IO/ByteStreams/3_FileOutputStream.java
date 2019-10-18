@@ -8,7 +8,7 @@
  * To skip the lines (go to the next line), we may use '\n'
  */
 
-package SampleJavaCodes.IO;
+package SampleJavaCodes.IO.ByteStreams;
 
 import java.io.File;
 import java.io.FileOutputStream;

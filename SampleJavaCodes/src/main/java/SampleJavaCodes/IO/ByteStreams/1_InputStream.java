@@ -10,7 +10,7 @@
  * 
  */
 
-package SampleJavaCodes.IO;
+package SampleJavaCodes.IO.ByteStreams;
 import java.io.InputStream;
 
 class InputStreamFeatures{

@@ -115,6 +115,8 @@ public class BasicTypes {
             
         }
 
+        Integer arr7[] = {null, 1}; // This is interesting!
+
     }
 
     public void arrayManipulation() {

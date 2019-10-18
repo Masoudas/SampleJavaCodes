@@ -6,6 +6,69 @@
     "configurations": [
         {
             "type": "java",
+            "name": "CodeLens (Launch) - ArrayListExample",
+            "request": "launch",
+            "mainClass": "SampleJavaCodes.UtilLibrary.ArrayListExample",
+            "projectName": "SampleJavaCodes"
+        },
+        {
+            "type": "java",
+            "name": "CodeLens (Launch) - InputStreamFeatures",
+            "request": "launch",
+            "mainClass": "SampleJavaCodes.IO.ByteStreams.InputStreamFeatures",
+            "projectName": "SampleJavaCodes"
+        },
+        {
+            "type": "java",
+            "name": "CodeLens (Launch) - FileReaderDemo",
+            "request": "launch",
+            "mainClass": "SampleJavaCodes.IO.FileReaderDemo",
+            "projectName": "SampleJavaCodes"
+        },
+        {
+            "type": "java",
+            "name": "CodeLens (Launch) - FileReaderDemo",
+            "request": "launch",
+            "mainClass": "SampleJavaCodes.IO.CharStreams.FileReaderDemo",
+            "projectName": "SampleJavaCodes"
+        },
+        {
+            "type": "java",
+            "name": "CodeLens (Launch) - ScannerClassDemo",
+            "request": "launch",
+            "mainClass": "SampleJavaCodes.IO.ScannerClassDemo",
+            "projectName": "SampleJavaCodes"
+        },
+        {
+            "type": "java",
+            "name": "CodeLens (Launch) - DataStreamExamples",
+            "request": "launch",
+            "mainClass": "SampleJavaCodes.IO.DataStreamExamples",
+            "projectName": "SampleJavaCodes"
+        },
+        {
+            "type": "java",
+            "name": "CodeLens (Launch) - DataStreamExamples",
+            "request": "launch",
+            "mainClass": "SampleJavaCodes.IO.ByteStreams.DataStreamExamples",
+            "projectName": "SampleJavaCodes"
+        },
+        {
+            "type": "java",
+            "name": "CodeLens (Launch) - FormatOutPut",
+            "request": "launch",
+            "mainClass": "SampleJavaCodes.Basics.FormatOutPut",
+            "projectName": "SampleJavaCodes"
+        },
+        {
+            "type": "java",
+            "name": "CodeLens (Launch) - FlushOnExample",
+            "request": "launch",
+            "mainClass": "SampleJavaCodes.IO.FlushOnExample",
+            "projectName": "SampleJavaCodes"
+        },
+        {
+            "type": "java",
             "name": "CodeLens (Launch) - FileOutputStreamExample",
             "request": "launch",
             "mainClass": "SampleJavaCodes.IO.FileOutputStreamExample",
