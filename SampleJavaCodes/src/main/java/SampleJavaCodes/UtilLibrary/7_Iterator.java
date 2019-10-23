@@ -40,6 +40,9 @@ class IteratorExample{
             lIterator.set(d);    
         }
 
-        System.out.println(lSet);
+        System.out.println("Just for fun, printing backwards.");
+        while(lIterator.hasPrevious()){
+            System.out.println(lIterator.previous());
+        }
     }
 }

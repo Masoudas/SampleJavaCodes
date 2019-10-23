@@ -9,7 +9,7 @@ import java.util.*;
 
 class LinkedListExample{
     public static void main(String[] args) {
-        LinkedList linkedList = new LinkedList<String>();
+        LinkedList<String> linkedList = new LinkedList<String>();
 
         linkedList.add("Parmi");
         linkedList.add("Entre");

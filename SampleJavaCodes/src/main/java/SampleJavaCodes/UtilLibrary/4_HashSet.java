@@ -3,6 +3,8 @@
  * collection that uses a hash table for storage.
  * 
  * NOTE THAT THE ELEMENTS ARE STORED IN NO PARTICULAR ORDER.
+ * 
+ * HashTable is pretty much the same, except for the 
  */
 
 package SampleJavaCodes.UtilLibrary;

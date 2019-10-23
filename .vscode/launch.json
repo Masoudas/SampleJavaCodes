@@ -6,6 +6,20 @@
     "configurations": [
         {
             "type": "java",
+            "name": "CodeLens (Launch) - ArraysClassExample",
+            "request": "launch",
+            "mainClass": "SampleJavaCodes.UtilLibrary.ArraysClassExample",
+            "projectName": "SampleJavaCodes"
+        },
+        {
+            "type": "java",
+            "name": "CodeLens (Launch) - CollectionAlgorithmsExample",
+            "request": "launch",
+            "mainClass": "SampleJavaCodes.UtilLibrary.CollectionAlgorithmsExample",
+            "projectName": "SampleJavaCodes"
+        },
+        {
+            "type": "java",
             "name": "CodeLens (Launch) - IteratorExample",
             "request": "launch",
             "mainClass": "SampleJavaCodes.UtilLibrary.IteratorExample",

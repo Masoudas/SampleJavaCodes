@@ -22,7 +22,8 @@ class LinkedHashSetExample{
         System.out.println(lSet);   // We see that when printing, the elements have the same order
         // as when they are put.
 
-        Iterator<Double> itr = lSet.iterator();
+        Iterator<Double> itr = lSet.iterator(); // Again note that the iterator works based on the input order,
+        // and not randomly. For some collections, this iteration would be completely random.
         while(itr.hasNext()){
             System.out.println(itr.next());
         }

@@ -1,5 +1,5 @@
 /**
- * This library contains has classes that generate pseudorandom 
+ * This library contains classes that generate pseudorandom 
  * numbers, manage date and time, observe events, manipulate sets of bits, 
  * tokenize strings, and handle formatted data.
  * 
@@ -9,10 +9,10 @@
  * 
  * Beginning with JDK 9, java.util is part of the java.base module
  * 
- * Bascially, we have interfaces for, and then implementations of those interfaces.
+ * Bascially, we have interfaces, and then implementations of those interfaces.
  * Interfaces:
  * 1- Collection: The top level interface. Note that collection types do not allow primitive
- *                types to be defined. We can only use reference types.
+ *                types to be used as generic elements. We can only use reference types.
  * 2- List: The List interface extends Collection and declares the behavior of a collection 
  *          that stores a sequence of elements. Elements can be inserted or accessed by 
  *          their position in the list, using a zero-based index. A list may contain duplicate 
@@ -24,7 +24,7 @@
  * 4- OrderedSet: The SortedSet interface extends Set and declares the behavior of a set sorted in 
  *                ascending order 
  * 
- * 5- NavigatbleSet: The NavigableSet interface extends SortedSet and declares the behavior of a 
+ * 5- NavigableSet: The NavigableSet interface extends SortedSet and declares the behavior of a 
  *                   collection that supports the retrieval of elements based on the closest match to
  *                   a given value or values
  * 
@@ -41,11 +41,17 @@
  * The collection classes are not synchronized, but it is possible to obtain synchronized
  * versions as well,
  * 
+ * If we seek a particular need, we can which interfaces are used by the class we need. For example,
+ * if RandomAccess interface is implemented, then random access to the elements of the set is possible,
+ * although this may not be efficient. If the set interface is implemented, then we have set like structure
+ * and so forth. 
  * 
  * So when we want to use these collection classes, we must ask ourselves what we seek.
  * 1- If we seek to access elements with indexing, then we use classes that have a List
- *    in their keyword.
+ *    in their keyword. 
  * 2- If we seek No repetition, then we use classes with Set.
  * 3- If we seek HashLike access, then classes with Hash.
  * 4- Tree like, we use classes that have the name Tree.
+ * 
+ * 
  */

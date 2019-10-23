@@ -12,6 +12,7 @@ package SampleJavaCodes.UtilLibrary;
 
 import java.util.SortedSet;
 import java.util.TreeSet;
+import java.util.Iterator;
 
 class TreeSetExample{
     public static void main(String[] args) {
@@ -27,5 +28,14 @@ class TreeSetExample{
         // to search for proximity.
         SortedSet<Double> sSet = tSet.subSet(4.0, 20.0);
         System.out.println(sSet);
+
+        // Note how the iterator works here, in the ascending order of things, and 
+        // not the order by which things are put.
+        Iterator<Double> iterator = tSet.iterator();
+        while (iterator.hasNext()){
+            System.out.println(iterator.next());
+        }
+
+        
     }
 }
