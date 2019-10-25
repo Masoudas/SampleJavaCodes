@@ -131,5 +131,15 @@ public class BasicTypes {
             System.out.println(var);
             
         }
+
+        // Is it possible to define array size in the run-time?
+        int x = (int)Math.sqrt(9);
+        int[] arr2 = new int[x];
+
+        arr2[0] = 10;
+        arr2[1] = 20;
+        arr2[2] = 30;
+
+        System.out.println(arr2[2] + "\t" + arr2[1] + "\t" + arr2[0]);
     }
 }
