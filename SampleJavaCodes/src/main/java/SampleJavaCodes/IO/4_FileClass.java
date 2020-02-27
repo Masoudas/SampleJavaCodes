@@ -116,6 +116,7 @@ class ManipulateFiles {
         FilenameFilter filter = new FilterExtension("java");    // The FilenameFilter is
                 // an interface. FilterExtension is a class implemented below here, by me :D!
         String[] str = f1.list(filter);
+        f1.li
         for (String str1 : str) {
             p("Files inside the folder: " + str1);    
         }

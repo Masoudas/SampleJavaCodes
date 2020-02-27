@@ -6,6 +6,83 @@
     "configurations": [
         {
             "type": "java",
+            "name": "CodeLens (Launch) - Test",
+            "request": "launch",
+            "mainClass": "SampleJavaCodes.Enumerations.Test",
+            "projectName": "SampleJavaCodes"
+        },
+        {
+            "type": "java",
+            "name": "CodeLens (Launch) - ImplementInt1",
+            "request": "launch",
+            "mainClass": "SampleJavaCodes.Interfaces.ImplementInt1",
+            "projectName": "SampleJavaCodes"
+        },
+        {
+            "type": "java",
+            "name": "CodeLens (Launch) - DocumentModalType",
+            "request": "launch",
+            "mainClass": "SampleJavaCodes.SwingGUI.ModalWindows.DocumentModalType",
+            "projectName": "SampleJavaCodes"
+        },
+        {
+            "type": "java",
+            "name": "CodeLens (Launch) - ModalityDemo",
+            "request": "launch",
+            "mainClass": "SampleJavaCodes.SwingGUI.ModalWindows.ModalityDemo",
+            "projectName": "SampleJavaCodes"
+        },
+        {
+            "type": "java",
+            "name": "CodeLens (Launch) - ModalityDemo",
+            "request": "launch",
+            "mainClass": "SampleJavaCodes.SwingGUI.ModalityDemo",
+            "projectName": "SampleJavaCodes"
+        },
+        {
+            "type": "java",
+            "name": "CodeLens (Launch) - ChangeFocus",
+            "request": "launch",
+            "mainClass": "SampleJavaCodes.SwingGUI.ChangeFocus",
+            "projectName": "SampleJavaCodes"
+        },
+        {
+            "type": "java",
+            "name": "CodeLens (Launch) - InnerDefaultAndStaticMethods",
+            "request": "launch",
+            "mainClass": "SampleJavaCodes.Interfaces.InnerDefaultAndStaticMethods",
+            "projectName": "SampleJavaCodes"
+        },
+        {
+            "type": "java",
+            "name": "CodeLens (Launch) - InheritStaticMehtod",
+            "request": "launch",
+            "mainClass": "SampleJavaCodes.Classes.InheritStaticMehtod",
+            "projectName": "SampleJavaCodes"
+        },
+        {
+            "type": "java",
+            "name": "CodeLens (Launch) - BasicApp",
+            "request": "launch",
+            "mainClass": "SampleJavaCodes.SwingGUI.BasicApp",
+            "projectName": "SampleJavaCodes"
+        },
+        {
+            "type": "java",
+            "name": "CodeLens (Launch) - ConcreteObserver",
+            "request": "launch",
+            "mainClass": "SampleJavaCodes.UtilLibrary.ConcreteObserver",
+            "projectName": "SampleJavaCodes"
+        },
+        {
+            "type": "java",
+            "name": "CodeLens (Launch) - Fundamentals",
+            "request": "launch",
+            "mainClass": "SampleJavaCodes.Classes.Fundamentals",
+            "projectName": "SampleJavaCodes"
+        },
+        {
+            "type": "java",
             "name": "CodeLens (Launch) - ArraysClassExample",
             "request": "launch",
             "mainClass": "SampleJavaCodes.UtilLibrary.ArraysClassExample",

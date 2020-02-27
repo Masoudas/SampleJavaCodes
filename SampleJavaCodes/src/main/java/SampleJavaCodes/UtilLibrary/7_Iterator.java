@@ -20,11 +20,13 @@ class IteratorExample{
 
         lSet.add(5.5);
         lSet.add(15.5);
-
+        lSet.add(25.5);
+        lSet.add(45.5);
         System.out.println(lSet);   // We see that when printing, the elements have the same order
         // as when they are put.
 
         Iterator<Double> itr = lSet.iterator();
+        
         while(itr.hasNext()){
             Double d = itr.next();
             System.out.println(d);

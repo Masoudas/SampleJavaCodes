@@ -1,6 +1,5 @@
-This is written for             the purpose of dems.
-ایم فارسی که حالش ره ببری
+Hey what's              up?
+ایم بریکه حالش ره ببری!
 
-There are four lines here.
-
-And another one                             here.
+This string is written at the end of the file!This string is written at the end of the file!
+This string is written at the end of the file!

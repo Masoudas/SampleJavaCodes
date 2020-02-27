@@ -14,6 +14,7 @@ Question is what happens to a class if it is declared public or private (only tw
 members of that class?
 
 1- Private class can only be accessed by classes in the same package. By package we mean also the subpackage the class is put inside of too.
+        To make a class private, we do not put any modifiers behind it.
         For example, Example11 class inside of basics folder can be accessed by all the classes inside of that package, but not for example 
         by the Classes subpackage.
 2- Public class of course can be accessed anywhere. Check TestPackage to see that this in fact is the case.

@@ -8,8 +8,10 @@
 
 package SampleJavaCodes.UtilLibrary;
 
-import java.util.*;
- class ArrayListExample{
+import java.util.ArrayList;
+import java.util.ListIterator;
+
+class ArrayListExample{
      public static void main(String[] args) {
         ArrayList<Integer> arrList = new ArrayList<Integer>(10); // This constructor accepts the minimal size.
         arrList.ensureCapacity(30);    // Ensuring the minimum capacity.
@@ -31,6 +33,18 @@ import java.util.*;
         ArrayList<Integer> arrList1 = new ArrayList<Integer>(arrList); // This constructor initializes from
         // other array.
         
+        // We can iterate over the list, because of the implementation 
+        // the iterable interface. What happens here is that we just get
+        // the iterator object of the list. 
+        for (Integer integer : arrList1) {
+            System.out.println(integer);  
+        }
+
+        // As we know, the list iterator actually gets a reference 
+        // to the underlying object.
+        ListIterator<Integer> lIterator = arrList1.listIterator();
+        
+
         
      }
  }
