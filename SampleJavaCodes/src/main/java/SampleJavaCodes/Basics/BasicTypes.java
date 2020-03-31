@@ -75,7 +75,7 @@ public class BasicTypes {
         // run-time error. This is why eventhough we don't get
         // a compile time error, we need to cast it.
 
-        
+        // See also morePromotion method below!
 
         int[] arr = new int[5]; // Upon initialization, all elements in numerical types are set to zero.
         boolean[] arr1 = new boolean[2]; // All variables in boolean are initialized to false.
@@ -147,6 +147,20 @@ public class BasicTypes {
         }
 
         Integer arr7[] = { null, 1 }; // This is interesting!
+
+    }
+
+    public void morePromotionLaws() {
+        /**
+         * Would there be a difference between the results of this expressions?
+         */
+        System.out.println(1.2d * (1/2));
+        System.out.println(1.2d * 1/2);
+
+        /**
+         * In the first one, the content of the paranthesis is integer, so the out come is integer, and result is zero.
+         * The second one, promotion happens, so the result would be 0.6!
+         */
 
     }
 
