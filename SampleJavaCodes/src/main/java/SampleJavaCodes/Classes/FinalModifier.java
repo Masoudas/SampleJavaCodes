@@ -2,13 +2,14 @@ package SampleJavaCodes.Classes;
 
 // For primitive types, the introduction of final keyword is equivalent to saying const.
 // final primitive types of class are either initialized directly, or through constructor
+// Hence for variables, it does not mean the variable cannot be overriden!
 
 // Final has two other applications:
 // 1- It prohibits a method from being overridden.
 // 2- It prohibits a class from being inherited.
 
 class WithFinal{
-    final int x = 10;
+    public static final int x = 10;
     final int y;
 
     public WithFinal() {

@@ -1,3 +1,21 @@
+package SampleJavaCodes.Classes;
+
+/**
+ * When defining a non-default constructor, the default constructor disappears.
+ * Hence, we should be very cautious about this, especially when it comes
+ * to inheritance.
+ */
+
+class ClassWithNoDefaultConstructor{
+    public ClassWithNoDefaultConstructor(int x){
+
+    }
+
+    public static void main(String[] args) {
+        // new ClassWithNoDefaultConstructor(); // This line would return an error!
+
+    }
+} 
 /**
  * It is possible to use other constructors of a class. For this
  * end, we can use the this keyword.
@@ -12,7 +30,8 @@
  * several instances will be created.
  * 
  * this( ) is most applicable to constructors that contain large amounts of initialization code, 
- * not those that simply set the value of a handful of fields
+ * not those that simply set the value of a handful of fields.
+ * 
  * 
  */
 

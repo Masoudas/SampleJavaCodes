@@ -2,13 +2,15 @@
 To access members of the super class that are hidden by the subclass, we may use the super keyword.
 It can either be:
 1- Constructor: The line would be super(), in which case the constructor must be called first.
-2- Members hidden by the derived class. This can be either fields or methods.
+2- Members hidden by the derived class. This can be either fields or methods. Hence, and overridden member
+or field of the super class can be accessed via the super keyword.
 
 Super only goes one level higher, meaning we cannot access the superclass of a superclass using for
 example super.super();
 
 Note that even if the constructor of the superclass is not called, it will be executed (in this case the parameterless constructor will
 be executed). The reason behind this is that we want all parameters to be initialized. The order of execution will be the order of hierarchy.
+Hence, first the highest constructor is executed, and then we come down the hierarchy.
 
 
 */
@@ -32,9 +34,12 @@ class A{
 
 }
 
+/**Here we see how we can access overddien field and methods. */
 class B extends A{
+    public int y;
     public B() {    
         super();    // This would be the constructor of the superclass.
+        this.y = super.y;   // Accessng the y of super class.
         System.out.println("Inside superclass B default constructor");
     }
 
