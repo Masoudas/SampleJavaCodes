@@ -1,0 +1,3 @@
+java.lang.Exception
+	at SampleJavaCodes.Exception.WorkingWithStackTrace.printStreamToFile(WorkingWithStackTrace.java:13)
+	at SampleJavaCodes.Exception.WorkingWithStackTrace.main(WorkingWithStackTrace.java:28)

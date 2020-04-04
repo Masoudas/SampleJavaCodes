@@ -6,6 +6,42 @@
     "configurations": [
         {
             "type": "java",
+            "name": "Launch",
+            "request": "launch",
+            "projectName": "SampleJavaCodes",
+            "mainClass": "EffectiveJava.Methods.CheckArgumentsForValidity",
+            "vmArgs": "-enableassertions"
+        },
+        {
+            "type": "java",
+            "name": "CodeLens (Launch) - CheckArgumentsForValidity",
+            "request": "launch",
+            "mainClass": "EffectiveJava.Methods.CheckArgumentsForValidity",
+            "projectName": "SampleJavaCodes"
+        },
+        {
+            "type": "java",
+            "name": "CodeLens (Launch) - WorkingWithStackTrace",
+            "request": "launch",
+            "mainClass": "SampleJavaCodes.Exception.WorkingWithStackTrace",
+            "projectName": "SampleJavaCodes"
+        },
+        {
+            "type": "java",
+            "name": "CodeLens (Launch) - HidingException",
+            "request": "launch",
+            "mainClass": "SampleJavaCodes.Exception.HidingException",
+            "projectName": "SampleJavaCodes"
+        },
+        {
+            "type": "java",
+            "name": "CodeLens (Launch) - ExceptionNoTrace",
+            "request": "launch",
+            "mainClass": "SampleJavaCodes.Exception.ExceptionNoTrace",
+            "projectName": "SampleJavaCodes"
+        },
+        {
+            "type": "java",
             "name": "CodeLens (Launch) - Test",
             "request": "launch",
             "mainClass": "SampleJavaCodes.Enumerations.Test",
