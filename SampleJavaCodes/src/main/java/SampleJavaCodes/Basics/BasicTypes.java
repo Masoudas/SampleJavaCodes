@@ -11,8 +11,10 @@ public class BasicTypes {
                                            // same (sub)package.
 
     public static void main(String[] args) {
-        // BasicTypes bTypes = new BasicTypes();
+        // new BasicTypes().multiDimArrays();
+        BasicTypes bTypes = new BasicTypes();
         // bTypes.arrayManipulation();
+        bTypes.cloningArrays();
         // bTypes.assignmentToVariables();
         // There's no unsigned variable in java.
         // Note that every decimal literal is integer by itself.
@@ -165,6 +167,10 @@ public class BasicTypes {
     }
 
     public void arrayManipulation() {
+        // By default, arrays have zero inside, because an integer is by default zero.
+        int[] emptyArry = new int[2];
+        System.out.println(emptyArry[0] + " " + emptyArry[1]);   // This line throws a null excpetion.
+
         // There are several ways to initialize an array. Consider this
         int[] arr = new int[10];
         Arrays.fill(arr, 20); // Well this is one method to initialize all to a particular value.
@@ -197,6 +203,29 @@ public class BasicTypes {
         arr2[2] = 30;
 
         System.out.println(arr2[2] + "\t" + arr2[1] + "\t" + arr2[0]);
+
+        // Note that it is possible to create zero length array
+        int[] arrZeroSize = new int[0];
+
+        System.out.println("A zero size array is created here " + arrZeroSize.length);
+    }
+
+    public void cloningArrays() {
+        /**
+         * For cloning arrays, we can use the clone method of the array.
+         * For primitive types, it will return a complete copy of the object.
+         * For reference types, it will return a copy of the array reference,
+         * but not the objects. BE CAREFUL.
+         *  */        
+        int[] arr = {1, 2};
+        int[] arr1 = arr.clone();
+        arr1[0] = 3;
+
+        System.out.println("Cloned primitive array " + arr1[0] + " is note the same as original " + arr[0]);
+
+        // We can also copyOf for more control over copying.
+        Arrays.copyOf(arr, 2);
+
     }
 
     public void assignmentToVariables() {
@@ -245,14 +274,25 @@ public class BasicTypes {
     public void multiDimArrays() {
         /**
          * Multidimensional Arrays can be defined in simple words as array of arrays.
-         * Data in multidimensional arrays are stored in tabular form (in row major
-         * order). arr[row][column][3rd][4th]
-         */
-        int[][] arr = { 
-                        { 1, 2 },   // first row
-                        { 3, 4 }    // second row
-                    };
+         * Data in multidimensional arrays are stored in tabular form.
+         * To keep the fact that the first bracket is column, every new dimension is added
+         * BEHIND the first bracket. Hence we have [column], [row][column], [3rd][row][column]
+         * and so forth
+         * 
+         * */
+        
+        int column = 3;
+        int row = 1;
+        int thrid = 1;
 
+        double[] x1 = {1, 2, 3, 4};
+        double[][] x2 = {{1, 2, 3, 4}, {5, 6, 7, 8}};
+        double[][][] x3 = {{{1, 2, 3, 4}, {5, 6, 7, 8}}, {{9, 10, 11, 12 }, {13, 14, 15, 16}}};
+    
+        System.out.println(x1[column]); // would be 4
+        System.out.println(x2[row][column]); // would be 8
+        System.out.println(x3[thrid][row][column]); // would be 16
+    
     }
 }
 

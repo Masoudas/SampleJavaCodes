@@ -6,6 +6,34 @@
     "configurations": [
         {
             "type": "java",
+            "name": "CodeLens (Launch) - OptionalReturner",
+            "request": "launch",
+            "mainClass": "EffectiveJava.Methods.OptionalReturner",
+            "projectName": "SampleJavaCodes"
+        },
+        {
+            "type": "java",
+            "name": "CodeLens (Launch) - CallOverloadedWithPrimitives",
+            "request": "launch",
+            "mainClass": "SampleJavaCodes.Classes.CallOverloadedWithPrimitives",
+            "projectName": "SampleJavaCodes"
+        },
+        {
+            "type": "java",
+            "name": "CodeLens (Launch) - OverloadingPrimitiveTypesWithGeneric",
+            "request": "launch",
+            "mainClass": "SampleJavaCodes.Classes.OverloadingPrimitiveTypesWithGeneric",
+            "projectName": "SampleJavaCodes"
+        },
+        {
+            "type": "java",
+            "name": "CodeLens (Launch) - OverloadingPrimitiveTypes",
+            "request": "launch",
+            "mainClass": "SampleJavaCodes.Classes.OverloadingPrimitiveTypes",
+            "projectName": "SampleJavaCodes"
+        },
+        {
+            "type": "java",
             "name": "Launch",
             "request": "launch",
             "projectName": "SampleJavaCodes",
