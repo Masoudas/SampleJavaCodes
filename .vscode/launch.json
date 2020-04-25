@@ -6,6 +6,13 @@
     "configurations": [
         {
             "type": "java",
+            "name": "CodeLens (Launch) - NYPizza",
+            "request": "launch",
+            "mainClass": "EffectiveJava.CreatingAndDestroyingObjects.NYPizza",
+            "projectName": "SampleJavaCodes"
+        },
+        {
+            "type": "java",
             "name": "CodeLens (Launch) - ExampleImplementation",
             "request": "launch",
             "mainClass": "SampleJavaCodes.Streams.ExampleImplementation",

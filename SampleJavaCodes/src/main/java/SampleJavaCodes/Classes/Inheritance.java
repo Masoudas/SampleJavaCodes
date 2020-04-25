@@ -34,3 +34,6 @@ class B extends A {
         b.readVal();
     }
 }
+
+
+
