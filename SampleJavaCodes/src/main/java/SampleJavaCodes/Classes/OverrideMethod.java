@@ -9,6 +9,11 @@ rather than compile time. Dynamic method dispatch is important because this is h
 
 What all this means is that when a method is overridden and we hold a reference of it using the base class, dynamic method dispatch
 allow us to use the overridden method, not the superclass method!
+
+
+VERY IMPORTANT NOTE HERE: Can we override static methods? The answer is ..... it does not make sense to do so!
+Why? Because static methods can't have dynamic method dispatching, becuase they are not defined at run-time!
+Hence, the question is wrong. We can just redefine the static method in the derived class!
 */
 
 package SampleJavaCodes.Classes;

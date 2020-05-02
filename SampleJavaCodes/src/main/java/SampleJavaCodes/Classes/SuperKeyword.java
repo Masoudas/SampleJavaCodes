@@ -12,6 +12,9 @@ Note that even if the constructor of the superclass is not called, it will be ex
 be executed). The reason behind this is that we want all parameters to be initialized. The order of execution will be the order of hierarchy.
 Hence, first the highest constructor is executed, and then we come down the hierarchy.
 
+Note that super refers to the current instance of the superclass constructed with this class. It cannot 
+be used to access static methods. For static methods, use method name directly. Although for fields,
+to avoid ambiguity sometimes we need to use the super keyword, and that's fine.
 
 */
 

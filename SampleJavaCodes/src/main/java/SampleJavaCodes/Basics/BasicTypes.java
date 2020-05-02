@@ -292,6 +292,14 @@ public class BasicTypes {
         System.out.println(x1[column]); // would be 4
         System.out.println(x2[row][column]); // would be 8
         System.out.println(x3[thrid][row][column]); // would be 16
+
+        // When checking the size of n-d arrays, .length property returns the length of 
+        // last (leftmost) dimension. Hence, for x3.length we get the third dimension.
+        // However, we can say x3[0].length to get the second dimension.
+
+        // This assingment is possible, and would be reference to that part of the original
+        // array.
+        double[][] x4 = x3[0];
     
     }
 }

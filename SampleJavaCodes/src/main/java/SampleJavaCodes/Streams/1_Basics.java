@@ -65,8 +65,13 @@ class ExampleImplementation {
         System.out.println("Sum of all numbers : " + stats.getSum());
         System.out.println("Average of all numbers : " + stats.getAverage());
 
-        
-        
+        // Compare two arrays???
+        long[] min = { 1, 1 };
+        long[] max = { 2, 2 };
+        int arrCtr = 0;
+        if (!Arrays.stream(min).allMatch(i -> i < max[arrCtr++])) {
+            throw new IllegalArgumentException("min should be greater than max");
+        }
 
     }
 }
