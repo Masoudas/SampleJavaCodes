@@ -4,7 +4,9 @@ import java.util.Arrays;
 import java.util.IntSummaryStatistics;
 import java.util.List;
 import java.util.Random;
+import java.util.function.IntUnaryOperator;
 import java.util.stream.Collectors;
+import java.util.stream.IntStream;
 
 /**
  * When dealing with collections of data, we sometimes like to certain
@@ -65,13 +67,17 @@ class ExampleImplementation {
         System.out.println("Sum of all numbers : " + stats.getSum());
         System.out.println("Average of all numbers : " + stats.getAverage());
 
-        // Compare two arrays???
-        long[] min = { 1, 1 };
-        long[] max = { 2, 2 };
-        int arrCtr = 0;
-        if (!Arrays.stream(min).allMatch(i -> i < max[arrCtr++])) {
-            throw new IllegalArgumentException("min should be greater than max");
-        }
+        
+    }
 
+    public static void operationsOnAnArray() {
+        // Calculating the cumulative multiplication using streams
+        // Is it even feasible? Maybe not, because each element is in the hand of one
+        // thread for example, so it's not. Perhaps unless I give the entire 
+        // arr to the stream too! Which would be dumb! So I would 
+        
+        int[] arr1 = {1,2,3};
+
+        IntStream.rangeClosed(1, arr1.length).mapToObj((i)-> arr1[i] = arr1[i-1]*arr1[i]);
     }
 }

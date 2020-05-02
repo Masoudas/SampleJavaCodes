@@ -6,6 +6,20 @@
     "configurations": [
         {
             "type": "java",
+            "name": "CodeLens (Launch) - RulesForDecreasingLifeTimeOfTemps",
+            "request": "launch",
+            "mainClass": "EffectiveJava.GeneralProgramming.RulesForDecreasingLifeTimeOfTemps",
+            "projectName": "SampleJavaCodes"
+        },
+        {
+            "type": "java",
+            "name": "CodeLens (Launch) - Initialization",
+            "request": "launch",
+            "mainClass": "SampleJavaCodes.Basics.Initialization",
+            "projectName": "SampleJavaCodes"
+        },
+        {
+            "type": "java",
             "name": "CodeLens (Launch) - Basics",
             "request": "launch",
             "mainClass": "SampleJavaCodes.LangModule.Clonable.Basics",
