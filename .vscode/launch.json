@@ -6,6 +6,13 @@
     "configurations": [
         {
             "type": "java",
+            "name": "CodeLens (Launch) - UseStreamsJudicously",
+            "request": "launch",
+            "mainClass": "EffectiveJava.LambdasAndStreams.UseStreamsJudicously",
+            "projectName": "SampleJavaCodes"
+        },
+        {
+            "type": "java",
             "name": "CodeLens (Launch) - RulesForDecreasingLifeTimeOfTemps",
             "request": "launch",
             "mainClass": "EffectiveJava.GeneralProgramming.RulesForDecreasingLifeTimeOfTemps",
