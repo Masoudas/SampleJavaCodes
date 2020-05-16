@@ -46,9 +46,6 @@ class Implementer extends AbstractBase {
  * not part of the signature). And we can get the overriden type from child
  * classes.
  * 
- * However, if we have access to the BASE CLASS reference, the method
- * dispatching mechanism only looks at the base class signature. Hence, it
- * always assumes that the base class reference is returned.
  */
 
 abstract class Base {

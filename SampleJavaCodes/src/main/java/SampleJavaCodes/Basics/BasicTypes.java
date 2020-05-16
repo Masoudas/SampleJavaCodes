@@ -123,11 +123,11 @@ public class BasicTypes {
         // The ternary if (?:) only works if the return types are the same, or
         // compatible. Also note that in the following case, the return type is
         // considered int
-        // Because the return type is derived from the left expression.
-        double val1 = false ? 0 : 1 / 5; // In this case, it will be zero for both cases.
+        // Because the return type is derived from the left expression (which is zero in this case).
+        // double val1 = condition ? 0 : 1 / 5; // In this case, it will be zero for both cases.
 
         // This type of inference does not work either
-        // var val = false ? 0 : 1/5; // In this case, it will be zero for both cases.
+        // var val = condition ? 0 : 1/5; // In this case, it will be zero for both cases.
 
         // As in C++, [], () and dot operators have the highest priority. FYI this is
         // why we use paranthesis to give priority.

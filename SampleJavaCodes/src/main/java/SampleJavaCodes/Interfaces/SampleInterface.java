@@ -58,3 +58,4 @@ abstract class partialImplementer implements SampleInterface {
     public void method1(SampleInterface iface) {
     }
 }
+
