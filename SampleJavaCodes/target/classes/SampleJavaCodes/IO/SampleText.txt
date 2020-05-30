@@ -1,5 +1,0 @@
-Hey what's              up?
-ایم بریکه حالش ره ببری!
-
-This string is written at the end of the file!This string is written at the end of the file!
-This string is written at the end of the file!
