@@ -1,1 +1,3 @@
-target/*
+SampleJavaCodes/target/*
+SampleJavaCodes/.settings/*
+SampleJavaCodes/.vscode/*
