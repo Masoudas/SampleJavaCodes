@@ -1,13 +1,35 @@
 package EffectiveJava.EnumsAndAnnotations;
 
+import java.util.EnumSet;
+import java.util.Enumeration;
+import java.util.Iterator;
+
 /**
  * enums and Annotations are two special types. an enum type is a type whose
- * legal values consist set of constant literals.
+ * legal values consist set of constant literals. We call the values of a enum
+ * its constants.
  * 
  * The problem with int literals is that, they can't be checked propely (and
  * that's why we use enum type in the first place).
  * 
- * !!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!DIDN'T FINISH THIS!!!!!!!!!!!!!!!!!!!!!!1
+ * enums are classes in and of themselves (hence they have constructors).
+ * Because their constructors cannot be public, they implement the singleton
+ * pattern, and each enumeration constant is a final static reference to an
+ * instance of that class. In other words, enum types are a generalization of
+ * singletons, because with singletons we have only one access point, but here
+ * we can have as many as we desire.
+ * 
+ * To get an iterator over the enum set, use need to transform it into a proper
+ * collection type, for example EnumSet. Then we can use it to iterate over the
+ * set.
+ * 
+ * What happens when you remove an enumeration from a set? If a client does not
+ * refer to it, they'd be fine. But if they do refer to it, the code will fail
+ * with a clear error message.
+ * 
+ * Sometimes, we want to associate a particular operation with each enum. Java
+ * lets us do this by defining an abstract method inside the enum class, and
+ * then override it for each constant (cool!).
  */
 
 enum Planet {
@@ -50,10 +72,46 @@ enum Planet {
         return mass * surfaceGravity; // F = ma
     }
 
+    public static Iterator<Planet> getIterator() {
+        return EnumSet.allOf(Planet.class).iterator();
+    }
+
     public static void main(String[] args) {
         Planet planet = Planet.EARTH;
         System.out.println(planet.name());
         System.out.println(planet.mass());
         System.out.println(planet.surfaceGravity());
     }
+}
+
+/**
+ * Define a basic calculator operation and then override it.
+ */
+enum Operation {
+    Add {
+        public double operation(double x, double y) {
+            return x + y;
+        }
+    },
+
+    Subtract {
+        public double operation(double x, double y) {
+            return x - y;
+        }
+    },
+
+    Divide {
+        public double operation(double x, double y) {
+            return x * y;
+        }
+    },
+    
+    Multiply {
+        public double operation(double x, double y) {
+            return x / y;
+        }
+    };
+
+    abstract public double operation(double x, double y);
+
 }
