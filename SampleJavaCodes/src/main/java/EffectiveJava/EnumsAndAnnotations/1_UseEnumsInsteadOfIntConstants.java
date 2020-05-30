@@ -1,8 +1,14 @@
 package EffectiveJava.EnumsAndAnnotations;
 
+import java.util.Arrays;
 import java.util.EnumSet;
 import java.util.Enumeration;
+import java.util.HashMap;
 import java.util.Iterator;
+import java.util.Map;
+import java.util.Optional;
+import java.util.stream.Collectors;
+import java.util.stream.Stream;
 
 /**
  * enums and Annotations are two special types. an enum type is a type whose
@@ -21,7 +27,9 @@ import java.util.Iterator;
  * 
  * To get an iterator over the enum set, use need to transform it into a proper
  * collection type, for example EnumSet. Then we can use it to iterate over the
- * set.
+ * set. Note also that essentially having if statements over the constants of an
+ * enum inside the enum is not a good idea, unless we use to somehow return
+ * a constant value.
  * 
  * What happens when you remove an enumeration from a set? If a client does not
  * refer to it, they'd be fine. But if they do refer to it, the code will fail
@@ -29,7 +37,37 @@ import java.util.Iterator;
  * 
  * Sometimes, we want to associate a particular operation with each enum. Java
  * lets us do this by defining an abstract method inside the enum class, and
- * then override it for each constant (cool!).
+ * then override it for each constant (cool!). The overridden methods are known
+ * as constant-specific method implementations. Of course as know, we can use
+ * constant specific data as well.
+ * 
+ * We may also override the toString method. If we do so, we better write a from
+ * string method. This method will iterate over the constants inside enum and
+ * return one if it exists. It's yelling at us that what we should return is in
+ * fact an optional, if no equivalent constant exists. See below an
+ * implementation. The premise is to keep a dictionary with string value
+ * representation of the constants. Especially pay attention to how we return
+ * the optional. Because the get method of the dictionary returns null, we use
+ * the ofNullable creator of optional to return the value.
+ * 
+ * Note that with enums, they can't access other's instance variables. They
+ * can't also access static variables of the enum except for the final static
+ * primitive types.
+ * 
+ * So let's say we have an enum called PayRoll day. Then suppose we want to
+ * calculate the salary for each day. Of course we can do this with a public
+ * static method that entails a switch statement. The problem is that as we add
+ * special cases (see vacation days), we may not update the switch and cause
+ * problems. We may define an abstract class like before and override it. The
+ * problem is that this would cause repetitive code. Of course, adding side
+ * classes is another option, but it adds to code, and maintenance issues.
+ * Moreover, overriding the static method for each enum constant is not a good
+ * idea, because we may forget about overriding. The idea then would be to move
+ * the salary computation method into another separate nested enum inside the
+ * enum. Hence, evey time we want to calculate the salary, we ask what sort of
+ * method we should use to do so. See example below! Cool. This is the 
+ * strategy enum inside the enum by the way.
+ * 
  */
 
 enum Planet {
@@ -50,13 +88,7 @@ enum Planet {
     private static final double G = 6.67300E-11;
 
     // Constructor
-    Planet(double mass, double radius) {
-        this.mass = mass;
-        this.radius = radius;
-        surfaceGravity = G * mass / (radius * radius);
-    }
-
-    public double mass() {
+    Planet(double mass, double radius) {PayRollDay
         return mass;
     }
 
@@ -72,7 +104,11 @@ enum Planet {
         return mass * surfaceGravity; // F = ma
     }
 
-    public static Iterator<Planet> getIterator() {
+    public static Iterator<Planet> getIteratorMethod1() {
+        return Arrays.asList(values()).iterator();
+    }
+
+    public static Iterator<Planet> getIteratorMethod2() {
         return EnumSet.allOf(Planet.class).iterator();
     }
 
@@ -105,7 +141,7 @@ enum Operation {
             return x * y;
         }
     },
-    
+
     Multiply {
         public double operation(double x, double y) {
             return x / y;
@@ -113,5 +149,84 @@ enum Operation {
     };
 
     abstract public double operation(double x, double y);
+
+}
+
+enum EnumWithStringConverter {
+    Val1, Val2;
+
+    private final static Map<String, EnumWithStringConverter> map = Stream.of(values())
+            .collect(Collectors.toMap(Object::toString, t -> t));
+
+    public static Optional<EnumWithStringConverter> fromString(String constant) {
+        return Optional.ofNullable(map.get(constant));
+    }
+}
+
+enum CantAccessOtherEnumsInsideConstructor {
+    Val1(1), Val2(2);
+
+    private static final int[] staticReferenceType = new int[2];
+    private static final int staticFinalVal = 10;
+    private int instanceField = 0;
+
+    private final int finalInstanceField = 0;
+
+    CantAccessOtherEnumsInsideConstructor(int y) {
+        // Why can I print this? Well, because the Object constructor has been called
+        // before here.
+        // Hence, you can have a string representation of the string. However, you can't
+        // access the instance filed associated with a constant.
+        System.out.println(EnumWithStringConverter.Val1.toString());
+
+        // System.out.println(Val1.instanceField); This violates the access, because the
+        // field may
+        // not have been constructed still!
+        // System.out.println(Val1.finalInstanceField); Not even if they're final
+
+        System.out.println(staticFinalVal); // This is completely valid, and the only access allowed by enums.
+
+        // staticReferenceType[0] = 5; This again is prohibited. I've no idea why. The
+        // book says if it were legal. it would return a null pointer exception. But
+        // why?
+
+    }
+}
+
+enum PayrollDay {
+    MONDAY, TUESDAY, WEDNESDAY, THURSDAY, FRIDAY, SATURDAY(PayType.WEEKEND), SUNDAY(PayType.WEEKEND);
+
+    private final PayType payType;
+
+    PayrollDay(PayType payType) { this.payType = payType; }
+
+    PayrollDay() { this(PayType.WEEKDAY); } // Default
+
+    int pay(int minutesWorked, int payRate) {
+        return payType.pay(minutesWorked, payRate);
+    }
+
+    private enum PayType {
+        WEEKDAY {
+            int overtimePay(int minsWorked, int payRate) {
+                return minsWorked <= MINS_PER_SHIFT ? 0 : (minsWorked - MINS_PER_SHIFT) * payRate / 2;
+            }
+        },
+        WEEKEND {
+            int overtimePay(int minsWorked, int payRate) {
+                return minsWorked * payRate / 2;
+            }
+        };
+
+        abstract int overtimePay(int mins, int payRate);
+
+        private static final int MINS_PER_SHIFT = 8 * 60;
+
+        int pay(int minsWorked, int payRate) {
+            int basePay = minsWorked * payRate;
+            return basePay + overtimePay(minsWorked, payRate);
+        }
+
+    }
 
 }

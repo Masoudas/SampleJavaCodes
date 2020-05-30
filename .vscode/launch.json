@@ -6,6 +6,13 @@
     "configurations": [
         {
             "type": "java",
+            "name": "CodeLens (Launch) - CantAccessOtherEnumsInsideConstructor",
+            "request": "launch",
+            "mainClass": "EffectiveJava.EnumsAndAnnotations.CantAccessOtherEnumsInsideConstructor",
+            "projectName": "SampleJavaCodes"
+        },
+        {
+            "type": "java",
             "name": "CodeLens (Launch) - UseStreamsJudicously",
             "request": "launch",
             "mainClass": "EffectiveJava.LambdasAndStreams.UseStreamsJudicously",
