@@ -6,6 +6,13 @@
     "configurations": [
         {
             "type": "java",
+            "name": "CodeLens (Launch) - SimpleJFrame",
+            "request": "launch",
+            "mainClass": "SwingLibrary.Introduction.SimpleJFrame",
+            "projectName": "SampleJavaCodes"
+        },
+        {
+            "type": "java",
             "name": "CodeLens (Launch) - CantAccessOtherEnumsInsideConstructor",
             "request": "launch",
             "mainClass": "EffectiveJava.EnumsAndAnnotations.CantAccessOtherEnumsInsideConstructor",
