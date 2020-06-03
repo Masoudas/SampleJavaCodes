@@ -6,6 +6,20 @@
     "configurations": [
         {
             "type": "java",
+            "name": "CodeLens (Launch) - Button",
+            "request": "launch",
+            "mainClass": "SwingLibrary.Introduction.Button",
+            "projectName": "SampleJavaCodes"
+        },
+        {
+            "type": "java",
+            "name": "CodeLens (Launch) - RootPane",
+            "request": "launch",
+            "mainClass": "SwingLibrary.Introduction.RootPane",
+            "projectName": "SampleJavaCodes"
+        },
+        {
+            "type": "java",
             "name": "CodeLens (Launch) - SimpleJFrame",
             "request": "launch",
             "mainClass": "SwingLibrary.Introduction.SimpleJFrame",
