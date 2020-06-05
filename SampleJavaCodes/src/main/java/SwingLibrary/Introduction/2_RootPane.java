@@ -6,14 +6,14 @@ import javax.swing.JButton;
 import javax.swing.JFrame;
 
 /**
- * Think of a JFrame as a picture frame. It has a glass plane (on the top), then
+ * Think of a JFrame as a picture frame. It has a glass pane (on the top), then
  * you may put several pictures inside the frame (layered pane). The layered
- * pane are showing partially, or the top one and bottom ones are not showing. A
- * layer pane has one content pane, which is the content of the layer (picture).
- * In swing, this content pane for each layer is also one.
- * 
- * rootPane contains several layers and one glass pane (glass on top of layers),
- * layers contain several content.
+ * pane are showing partially, or the top one is showing and bottom ones are not
+ * showing. A layer pane has one content pane (Me: Suppose it's the picture
+ * content of a layer), which is the content of the layer (picture). In swing,
+ * this content pane for each layer is also one.
+ *  * rootPane contains several layers and one glass pane (glass on top of layers),
+ * layers contain several content pane.
  * 
  * Officially, When depicting a base java frame, several things happen (See
  * 2_RootPane.png)
@@ -39,8 +39,8 @@ import javax.swing.JFrame;
  * 
  * Add components to a container using the add button of that container.
  * 
- * The pack() method, sets the size of the JFrame automatically, so that every component
- * is visible.
+ * The pack() method, sets the size of the JFrame automatically, so that every
+ * component is visible.
  */
 
 class RootPane {
@@ -51,27 +51,6 @@ class RootPane {
         JButton button = new JButton("Ok");
 
         contentPane.add(button);
-
-        frame.pack();
-        frame.setVisible(true);
-        frame.setDefaultCloseOperation(JFrame.EXIT_ON_CLOSE);
-
-    }
-
-}
-
-/**
- * Adding two buttons in a normal does not work, and one overtakes the other because
- * default location is set for both of them
- */
-
-class Button {
-    public static void main(String[] args) {
-        JFrame frame = new JFrame();
-        Container contentPane = frame.getContentPane();
-
-        contentPane.add(new JButton("Ok"));
-        contentPane.add(new JButton("Cancel"));
 
         frame.pack();
         frame.setVisible(true);

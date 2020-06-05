@@ -6,6 +6,20 @@
     "configurations": [
         {
             "type": "java",
+            "name": "CodeLens (Launch) - UsingFlowLayoutWithGapAndAlignemnt",
+            "request": "launch",
+            "mainClass": "SwingLibrary.Introduction.UsingFlowLayoutWithGapAndAlignemnt",
+            "projectName": "SampleJavaCodes"
+        },
+        {
+            "type": "java",
+            "name": "CodeLens (Launch) - UsingFlowLayout",
+            "request": "launch",
+            "mainClass": "SwingLibrary.Introduction.UsingFlowLayout",
+            "projectName": "SampleJavaCodes"
+        },
+        {
+            "type": "java",
             "name": "CodeLens (Launch) - Button",
             "request": "launch",
             "mainClass": "SwingLibrary.Introduction.Button",
