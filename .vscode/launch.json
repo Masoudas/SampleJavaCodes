@@ -6,6 +6,20 @@
     "configurations": [
         {
             "type": "java",
+            "name": "CodeLens (Launch) - BorderLayoutTest",
+            "request": "launch",
+            "mainClass": "SwingLibrary.Introduction.BorderLayoutTest",
+            "projectName": "SampleJavaCodes"
+        },
+        {
+            "type": "java",
+            "name": "CodeLens (Launch) - JPanelInsideJFrame",
+            "request": "launch",
+            "mainClass": "SwingLibrary.Introduction.JPanelInsideJFrame",
+            "projectName": "SampleJavaCodes"
+        },
+        {
+            "type": "java",
             "name": "CodeLens (Launch) - Plant",
             "request": "launch",
             "mainClass": "EffectiveJava.EnumsAndAnnotations.Plant",
