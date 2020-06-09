@@ -1,4 +1,4 @@
-package SwingLibrary.Introduction;
+package SwingLibrary.LayoutManagers;
 
 /**
  * Border layout has five locations, north, west, south, east, center.
@@ -26,7 +26,9 @@ package SwingLibrary.Introduction;
  * them height necessary to fill the entire space vertically. 
  * The component in the center area is stretched horizontally as well as vertically 
  * to fit the available space. That is, the center area does not respect its 
- * component’s preferred width and height  */
+ * component’s preferred width and height  
+ * 
+ * */
 
 import javax.swing.JButton;
 import java.awt.Container;

@@ -1,4 +1,4 @@
-package SwingLibrary.Introduction;
+package SwingLibrary.LayoutManagers;
 
 import java.awt.Container;
 import java.awt.*;

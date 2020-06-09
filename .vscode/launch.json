@@ -6,6 +6,20 @@
     "configurations": [
         {
             "type": "java",
+            "name": "CodeLens (Launch) - BoxLayoutTest",
+            "request": "launch",
+            "mainClass": "SwingLibrary.LayoutManagers.BoxLayoutTest",
+            "projectName": "SampleJavaCodes"
+        },
+        {
+            "type": "java",
+            "name": "CodeLens (Launch) - CardLayoutExample",
+            "request": "launch",
+            "mainClass": "SwingLibrary.LayoutManagers.CardLayoutExample",
+            "projectName": "SampleJavaCodes"
+        },
+        {
+            "type": "java",
             "name": "CodeLens (Launch) - BorderLayoutTest",
             "request": "launch",
             "mainClass": "SwingLibrary.Introduction.BorderLayoutTest",
