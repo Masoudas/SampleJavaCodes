@@ -6,6 +6,34 @@
     "configurations": [
         {
             "type": "java",
+            "name": "CodeLens (Launch) - RelativeY",
+            "request": "launch",
+            "mainClass": "SwingLibrary.LayoutManagers.RelativeY",
+            "projectName": "SampleJavaCodes"
+        },
+        {
+            "type": "java",
+            "name": "CodeLens (Launch) - GridBagLayoutWithgridxAndgridy",
+            "request": "launch",
+            "mainClass": "SwingLibrary.LayoutManagers.GridBagLayoutWithgridxAndgridy",
+            "projectName": "SampleJavaCodes"
+        },
+        {
+            "type": "java",
+            "name": "CodeLens (Launch) - SimplestGridBagLayout",
+            "request": "launch",
+            "mainClass": "SwingLibrary.LayoutManagers.SimplestGridBagLayout",
+            "projectName": "SampleJavaCodes"
+        },
+        {
+            "type": "java",
+            "name": "CodeLens (Launch) - GridLayoutExample",
+            "request": "launch",
+            "mainClass": "SwingLibrary.LayoutManagers.GridLayoutExample",
+            "projectName": "SampleJavaCodes"
+        },
+        {
+            "type": "java",
             "name": "CodeLens (Launch) - BoxLayoutTest",
             "request": "launch",
             "mainClass": "SwingLibrary.LayoutManagers.BoxLayoutTest",
