@@ -6,6 +6,13 @@
     "configurations": [
         {
             "type": "java",
+            "name": "CodeLens (Launch) - CollectToLinkedList",
+            "request": "launch",
+            "mainClass": "SampleJavaCodes.Streams.Collectors.CollectToLinkedList",
+            "projectName": "SampleJavaCodes"
+        },
+        {
+            "type": "java",
             "name": "CodeLens (Launch) - InsetConstraint",
             "request": "launch",
             "mainClass": "SwingLibrary.LayoutManagers.InsetConstraint",

@@ -12,6 +12,8 @@ import java.util.ArrayList;
 import java.util.Arrays;
 import java.util.List;
 import java.util.ListIterator;
+import java.util.stream.Collectors;
+import java.util.stream.Stream;
 
 class ArrayListExample {
     public static void main(String[] args) {
@@ -58,4 +60,21 @@ class ArrayListExample {
         long[] longArry = Arrays.stream(arr2).mapToLong((t)-> t).toArray();
 
     }
+
+    public void mergingTwoListKeepingTheDuplicates() {
+        ArrayList<String> listOne = new ArrayList<>(Arrays.asList("a", "b", "c", "d", "e"));
+
+        ArrayList<String> listTwo = new ArrayList<>(Arrays.asList("a", "b", "c", "f", "g"));
+
+        List<String> combinedList = Stream.of(listOne, listTwo).flatMap(x -> x.stream()).collect(Collectors.toList());
+    }
+
+    public void mergingTwoListNotKeepingTheDuplicates() {
+        ArrayList<String> listOne = new ArrayList<>(Arrays.asList("a", "b", "c", "d", "e"));
+
+        ArrayList<String> listTwo = new ArrayList<>(Arrays.asList("a", "b", "c", "f", "g"));
+
+        listOne.addAll(listTwo);
+    }
+
 }
