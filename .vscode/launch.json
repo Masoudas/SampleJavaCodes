@@ -6,6 +6,41 @@
     "configurations": [
         {
             "type": "java",
+            "name": "CodeLens (Launch) - InsetConstraint",
+            "request": "launch",
+            "mainClass": "SwingLibrary.LayoutManagers.InsetConstraint",
+            "projectName": "SampleJavaCodes"
+        },
+        {
+            "type": "java",
+            "name": "CodeLens (Launch) - FillConstraintExample",
+            "request": "launch",
+            "mainClass": "SwingLibrary.LayoutManagers.FillConstraintExample",
+            "projectName": "SampleJavaCodes"
+        },
+        {
+            "type": "java",
+            "name": "CodeLens (Launch) - GridwidthExample",
+            "request": "launch",
+            "mainClass": "SwingLibrary.LayoutManagers.GridwidthExample",
+            "projectName": "SampleJavaCodes"
+        },
+        {
+            "type": "java",
+            "name": "CodeLens (Launch) - RelativeExample2",
+            "request": "launch",
+            "mainClass": "SwingLibrary.LayoutManagers.RelativeExample2",
+            "projectName": "SampleJavaCodes"
+        },
+        {
+            "type": "java",
+            "name": "CodeLens (Launch) - RelativeExample1",
+            "request": "launch",
+            "mainClass": "SwingLibrary.LayoutManagers.RelativeExample1",
+            "projectName": "SampleJavaCodes"
+        },
+        {
+            "type": "java",
             "name": "CodeLens (Launch) - RelativeY",
             "request": "launch",
             "mainClass": "SwingLibrary.LayoutManagers.RelativeY",

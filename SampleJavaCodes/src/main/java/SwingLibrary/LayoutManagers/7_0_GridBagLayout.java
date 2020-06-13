@@ -16,7 +16,7 @@ import java.awt.GridBagConstraints;
  * 
  * To specify the cell for a component, you need to call the add(Component c,
  * Object constraints) method. If no constraint, all cells are placed in one row
- * (like the FlowLayout).
+ * (like the FlowLayout). See reason in next file.
  * 
  * To specify placement in cell, we must specify location of component with
  * constraint. The first cell depends on the orientation of the container. Left
