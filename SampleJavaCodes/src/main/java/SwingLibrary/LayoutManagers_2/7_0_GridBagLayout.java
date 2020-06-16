@@ -5,6 +5,7 @@ import java.awt.Container;
 import javax.swing.JButton;
 import java.awt.GridBagLayout;
 import java.awt.GridBagConstraints;
+import java.awt.*;
 
 /**
  * With GridBagLayout, it lets you customize many properties of the components,
@@ -29,7 +30,12 @@ import java.awt.GridBagConstraints;
 class SimplestGridBagLayout {
     public static void main(String[] args) {
         String title = "GridBagLayout in its Simplest Form";
+
+        Dimension minimumSize = new Dimension(500, 500);
+
         JFrame frame = new JFrame(title);
+        frame.setMinimumSize(minimumSize);
+        frame.setResizable(false);
         frame.setDefaultCloseOperation(JFrame.EXIT_ON_CLOSE);
         Container contentPane = frame.getContentPane();
         contentPane.setLayout(new GridBagLayout());

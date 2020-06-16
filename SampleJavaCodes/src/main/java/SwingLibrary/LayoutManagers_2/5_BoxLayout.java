@@ -1,7 +1,14 @@
 package SwingLibrary.LayoutManagers;
 
+import java.awt.Container;
+import javax.swing.JFrame;
+import javax.swing.JButton;
+import javax.swing.JPanel;
+import javax.swing.BoxLayout;
+import java.awt.BorderLayout;
+
 /**
- * Laysout components IN A CONTAINTER either horizontally in one row or
+ * Lays out components IN A CONTAINTER either horizontally in one row or
  * vertically in one column.
  * 
  * To use it:
@@ -41,13 +48,6 @@ package SwingLibrary.LayoutManagers;
  * A filler is an invisible custom component that you can create by specifying 
  * your own minimum, maximum, and preferred sizes.
  */
-
-import java.awt.Container;
-import javax.swing.JFrame;
-import javax.swing.JButton;
-import javax.swing.JPanel;
-import javax.swing.BoxLayout;
-import java.awt.BorderLayout;
 
 class BoxLayoutTest {
     public static void main(String[] args) {

@@ -6,6 +6,48 @@
     "configurations": [
         {
             "type": "java",
+            "name": "CodeLens (Launch) - BorderLayoutTest",
+            "request": "launch",
+            "mainClass": "SwingLibrary.LayoutManagers.BorderLayoutTest",
+            "projectName": "SampleJavaCodes"
+        },
+        {
+            "type": "java",
+            "name": "CodeLens (Launch) - JPanelInsideJFrame",
+            "request": "launch",
+            "mainClass": "SwingLibrary.LayoutManagers.JPanelInsideJFrame",
+            "projectName": "SampleJavaCodes"
+        },
+        {
+            "type": "java",
+            "name": "CodeLens (Launch) - UsingFlowLayoutWithGapAndAlignemnt",
+            "request": "launch",
+            "mainClass": "SwingLibrary.LayoutManagers.UsingFlowLayoutWithGapAndAlignemnt",
+            "projectName": "SampleJavaCodes"
+        },
+        {
+            "type": "java",
+            "name": "CodeLens (Launch) - NullLayout",
+            "request": "launch",
+            "mainClass": "SwingLibrary.LayoutManagers.NullLayout",
+            "projectName": "SampleJavaCodes"
+        },
+        {
+            "type": "java",
+            "name": "CodeLens (Launch) - WeightConstraintExampleWithFill",
+            "request": "launch",
+            "mainClass": "SwingLibrary.LayoutManagers.WeightConstraintExampleWithFill",
+            "projectName": "SampleJavaCodes"
+        },
+        {
+            "type": "java",
+            "name": "CodeLens (Launch) - WeightConstraintExample",
+            "request": "launch",
+            "mainClass": "SwingLibrary.LayoutManagers.WeightConstraintExample",
+            "projectName": "SampleJavaCodes"
+        },
+        {
+            "type": "java",
             "name": "CodeLens (Launch) - CollectToLinkedList",
             "request": "launch",
             "mainClass": "SampleJavaCodes.Streams.Collectors.CollectToLinkedList",

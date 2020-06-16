@@ -7,6 +7,8 @@ import javax.swing.JFrame;
 import java.awt.*;
 
 /**
+ * Note that in gridBagLayout, we never specify number of rows and columns. We only
+ * work with constraints.
  * 
  * gridx and gridy specify the starting cell of the display area of a component.
  * By default, each component occupies only one cell. As mentioned, which also

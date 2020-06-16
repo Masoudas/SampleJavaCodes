@@ -11,7 +11,7 @@ import javax.swing.JPanel;
  * height) of all components in a container. We normally want to add layout
  * manager to the content pane.
  * 
- * The point of a layout manager is that when the component is resize, the
+ * The point of a layout manager is that when the component is resized, the
  * layout remains sensible. Otherwise, we get issues. So just setting the
  * location of components does not suffice.
  * 
