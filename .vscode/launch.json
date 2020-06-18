@@ -6,6 +6,20 @@
     "configurations": [
         {
             "type": "java",
+            "name": "CodeLens (Launch) - BadSwingApp",
+            "request": "launch",
+            "mainClass": "SwingLibrary.ThreadManagement_6.BadSwingApp",
+            "projectName": "SampleJavaCodes"
+        },
+        {
+            "type": "java",
+            "name": "CodeLens (Launch) - HandlingMouseEvent",
+            "request": "launch",
+            "mainClass": "SwingLibrary.eventHandling_4.HandlingMouseEvent",
+            "projectName": "SampleJavaCodes"
+        },
+        {
+            "type": "java",
             "name": "CodeLens (Launch) - JButtonClickedCounter",
             "request": "launch",
             "mainClass": "SwingLibrary.eventHandling_4.JButtonClickedCounter",

@@ -7,8 +7,14 @@ package SwingLibrary.eventHandling_4;
  * Example is getModifiers(), which indicates whether and which modifier key
  * (like alt, ctrl, etc) is pressed during the event.
  * 
- * paramString() indicates an string name indicating event name, used for debugging mostly.
+ * paramString() indicates an string name indicating event name, used for
+ * debugging mostly.
  * 
- * getActionCommand() returns the name of the button.
- * setActionCommand() (re)sets the name
+ * getActionCommand() returns the name of the button. setActionCommand()
+ * (re)sets the name
+ * 
+ * What are these two good for? Suppose we want to show or hide some detail on
+ * the screen, using this button. We use getActionCommand() and check the name
+ * of the button, do the action accordingly, then set the name using
+ * setActionCommand().
  */
