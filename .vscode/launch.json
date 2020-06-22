@@ -6,6 +6,20 @@
     "configurations": [
         {
             "type": "java",
+            "name": "CodeLens (Launch) - SwingWorkerFrame",
+            "request": "launch",
+            "mainClass": "SwingLibrary.ThreadManagement_6.SwingWorkerFrame",
+            "projectName": "SampleJavaCodes"
+        },
+        {
+            "type": "java",
+            "name": "CodeLens (Launch) - BetterSwingApp",
+            "request": "launch",
+            "mainClass": "SwingLibrary.ThreadManagement_6.BetterSwingApp",
+            "projectName": "SampleJavaCodes"
+        },
+        {
+            "type": "java",
             "name": "CodeLens (Launch) - BadSwingApp",
             "request": "launch",
             "mainClass": "SwingLibrary.ThreadManagement_6.BadSwingApp",

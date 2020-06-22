@@ -47,10 +47,23 @@ import javax.swing.JComboBox;
  * event dispatch thread. This is also a simple thing to do. You need to use the
  * invokeLater(Runnable r) static method of the SwingUtilities class. The method
  * takes a Runnable as its argument. It schedules the Runnable to run on the
- * event dispatch thread.
+ * event dispatch thread. The SwingUtilities.invokeLater() method call returns
+ * (method terminates) immediately and the run() method of its Runnable argument
+ * is executed asynchronously. That is, its run() method’s execution is queued
+ * to the event dispatch thread for later execution.
+ * 
+ * There is another important static method called invokeAndWait(Runnable r) in
+ * the SwingUtilities class. This method is executed synchronously and it does
+ * not return until the run() method of its Runnable argument has finished
+ * executing on the event dispatch thread. This method may throw an
+ * InterruptedException or InvocationTargetException. This method should not be 
+ * called on the EventDispatchMethod itself, because apparently there'll be some sort
+ * of a loop, where we check the loop and because we're on it it's busy, so it will
+ * never be free to execute the GUI!
  *
  */
 class BadSwingApp extends JFrame {
+    private static final long serialVersionUID = 542340218099339367L;
     JComboBox<String> combo = new JComboBox<>();
 
     public BadSwingApp(String title) {
@@ -74,5 +87,39 @@ class BadSwingApp extends JFrame {
         BadSwingApp badSwingApp = new BadSwingApp("A bad Swing App");
         badSwingApp.pack();
         badSwingApp.setVisible(true);
+    }
+}
+
+class BetterSwingApp extends JFrame {
+    private static final long serialVersionUID = 542340218099339367L;
+    JComboBox<String> combo = new JComboBox<>();
+
+    public BetterSwingApp(String title) {
+        super(title);
+        initFrame();
+    }
+
+    private void initFrame() {
+        this.setDefaultCloseOperation(JFrame.EXIT_ON_CLOSE);
+        Container contentPane = this.getContentPane();
+        contentPane.add(combo, BorderLayout.NORTH);
+        combo.addItem("First");
+        combo.addItem("Second");
+        combo.addItem("Third");
+
+        // Add an ItemEvent listener to the combobox always as the last operation of
+        // creating an app.
+        combo.addItemListener(
+                e -> System.out.println("isEventDispatchThread(): " + SwingUtilities.isEventDispatchThread()));
+
+    }
+
+    public static void main(String[] args) {
+        SwingUtilities.invokeLater(() -> {
+            BadSwingApp badSwingApp = new BadSwingApp("A bad Swing App");
+            badSwingApp.pack();
+            badSwingApp.setVisible(true);
+        });
+
     }
 }
