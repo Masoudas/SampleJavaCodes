@@ -6,6 +6,55 @@
     "configurations": [
         {
             "type": "java",
+            "name": "CodeLens (Launch) - Partition",
+            "request": "launch",
+            "mainClass": "SampleJavaCodes.Streams.Collectors.Partition",
+            "projectName": "SampleJavaCodes"
+        },
+        {
+            "type": "java",
+            "name": "CodeLens (Launch) - CreateMapWithMapSupplier",
+            "request": "launch",
+            "mainClass": "SampleJavaCodes.Streams.Collectors.CreateMapWithMapSupplier",
+            "projectName": "SampleJavaCodes"
+        },
+        {
+            "type": "java",
+            "name": "CodeLens (Launch) - d",
+            "request": "launch",
+            "mainClass": "SampleJavaCodes.Streams.Collectors.d",
+            "projectName": "SampleJavaCodes"
+        },
+        {
+            "type": "java",
+            "name": "CodeLens (Launch) - SimplestToMap",
+            "request": "launch",
+            "mainClass": "SampleJavaCodes.Streams.Collectors.SimplestToMap",
+            "projectName": "SampleJavaCodes"
+        },
+        {
+            "type": "java",
+            "name": "CodeLens (Launch) - GroupbyWithAMapFactory",
+            "request": "launch",
+            "mainClass": "SampleJavaCodes.Streams.Collectors.GroupbyWithAMapFactory",
+            "projectName": "SampleJavaCodes"
+        },
+        {
+            "type": "java",
+            "name": "CodeLens (Launch) - GroupAndCreate",
+            "request": "launch",
+            "mainClass": "SampleJavaCodes.Streams.Collectors.GroupAndCreate",
+            "projectName": "SampleJavaCodes"
+        },
+        {
+            "type": "java",
+            "name": "CodeLens (Launch) - SimplestGroupBy",
+            "request": "launch",
+            "mainClass": "SampleJavaCodes.Streams.Collectors.SimplestGroupBy",
+            "projectName": "SampleJavaCodes"
+        },
+        {
+            "type": "java",
             "name": "CodeLens (Launch) - NullReference",
             "request": "launch",
             "mainClass": "SampleJavaCodes.Classes.NullReference",

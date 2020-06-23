@@ -2,6 +2,7 @@ package EffectiveJava.EnumsAndAnnotations;
 
 import java.util.Arrays;
 import java.util.EnumMap;
+import java.util.HashMap;
 import java.util.HashSet;
 import java.util.Map;
 import java.util.Set;
@@ -9,7 +10,7 @@ import java.util.stream.Collectors;
 import java.util.stream.Stream;
 
 /**
- * We wanting to associate data with an enum, create a hash table, with keys
+ * We want to associate data with an enum, create a hash table, with keys
  * being the enums and values being the stuff that you want to associate with
  * them. Don't use the ordinals of the enum (Duh!).
  * 
@@ -121,9 +122,11 @@ enum Phase {
         private static final Map<Phase, Map<Phase, Transition>> m = Stream.of(values())
                 .collect(Collectors.groupingBy(t -> t.from, () -> new EnumMap<>(Phase.class),
                         Collectors.toMap(t -> t.to, t -> t, (x, y) -> y, () -> new EnumMap<>(Phase.class))));
+        
 
         public static Transition from(Phase from, Phase to) {
             return m.get(from).get(to);
         }
     }
 }
+
