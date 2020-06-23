@@ -6,6 +6,27 @@
     "configurations": [
         {
             "type": "java",
+            "name": "CodeLens (Launch) - NullReference",
+            "request": "launch",
+            "mainClass": "SampleJavaCodes.Classes.NullReference",
+            "projectName": "SampleJavaCodes"
+        },
+        {
+            "type": "java",
+            "name": "CodeLens (Launch) - HierArchyOfCompenents",
+            "request": "launch",
+            "mainClass": "SwingLibrary.components_5.HierArchyOfCompenents",
+            "projectName": "SampleJavaCodes"
+        },
+        {
+            "type": "java",
+            "name": "CodeLens (Launch) - ThreadGenerator",
+            "request": "launch",
+            "mainClass": "SampleJavaCodes.ThreadManagement.ThreadGenerator",
+            "projectName": "SampleJavaCodes"
+        },
+        {
+            "type": "java",
             "name": "CodeLens (Launch) - ViewModel",
             "request": "launch",
             "mainClass": "SwingLibrary.ThreadManagement_6.ViewModel",
