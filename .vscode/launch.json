@@ -6,6 +6,20 @@
     "configurations": [
         {
             "type": "java",
+            "name": "CodeLens (Launch) - ViewModel",
+            "request": "launch",
+            "mainClass": "SwingLibrary.ThreadManagement_6.ViewModel",
+            "projectName": "SampleJavaCodes"
+        },
+        {
+            "type": "java",
+            "name": "CodeLens (Launch) - UsingViewModel",
+            "request": "launch",
+            "mainClass": "SwingLibrary.ThreadManagement_6.UsingViewModel",
+            "projectName": "SampleJavaCodes"
+        },
+        {
+            "type": "java",
             "name": "CodeLens (Launch) - SwingWorkerFrame",
             "request": "launch",
             "mainClass": "SwingLibrary.ThreadManagement_6.SwingWorkerFrame",
