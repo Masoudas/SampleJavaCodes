@@ -83,6 +83,14 @@ class JButtonExamples {
  * implementation for the Action interface. AbstractAction is an abstract class.
  * You need to inherit your class from it. Listing 2-1 defines a CloseAction
  * inner class, which inherits from the AbstractAction class.
+ * 
+ * If you want to set any property for the JButton while using the Action
+ * object, you can do so by using putValue(String key, Object value) method of
+ * the Action interface.
+ * 
+ * Finally, if a feature of a JButton is set independently after using the
+ * action, it DOES NOT affect other buttons (unless we set the feature using the
+ * action, which is different of course).
  */
 
 class CloseAction extends AbstractAction {
@@ -97,12 +105,16 @@ class CloseAction extends AbstractAction {
         System.exit(0);
     }
 
-
 }
 
-class UsingAction{
+class UsingAction {
     public static void main(String[] args) {
         Icon icon = new ImageIcon("");
-        JButton button = new JButton(new CloseAction(icon));
+
+        CloseAction closeAction = new CloseAction(icon);
+        closeAction.putValue(Action.SHORT_DESCRIPTION, "Closes the application");
+        closeAction.putValue(Action.MNEMONIC_KEY, KeyEvent.VK_C);
+
+        JButton button = new JButton(closeAction);
     }
 }
