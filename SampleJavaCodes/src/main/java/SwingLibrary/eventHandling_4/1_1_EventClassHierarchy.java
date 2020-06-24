@@ -7,7 +7,7 @@ package SwingLibrary.eventHandling_4;
  * Example is getModifiers(), which indicates whether and which modifier key
  * (like alt, ctrl, etc) is pressed during the event.
  * 
- * paramString() indicates an string name indicating event name, used for
+ * paramString() returns an string name indicating event name, used for
  * debugging mostly.
  * 
  * getActionCommand() returns the name of the button. setActionCommand()

@@ -10,7 +10,7 @@ import javax.swing.JFrame;
  * An event is an occurance at a certain point in time (like the literal
  * definition.)
  * 
- * We also say even trigger when an even happens.
+ * We also say event trigger when an even happens.
  * 
  * Taking an action in response to the occurrence of an event is called event
  * handling.
@@ -40,12 +40,13 @@ import javax.swing.JFrame;
  * 
  * The 1_EventClassHierarchy shows the class hierarchy of events.
  * 
- * It's interesting that essentially, there are no methods to access the 
- * actuall events for example in a button. Just methods to register handles. The reason
- * why we need to know them though is that they're passed throught the event listener class.
+ * It's interesting that essentially, there are no methods to access the actuall
+ * events for example in a button. Just methods to register handlers. The reason
+ * why we need to know them though is that they're passed through the event
+ * listener class.
  * 
- * Also interesting is that the source of all event listener interfaces (EvenListener) is in fact
- * in the java.util class.
+ * Also interesting is that the source of all event listener interfaces
+ * (EvenListener) is in fact in the java.util class.
  */
 class SimplestEventHandlingFrame extends JFrame {
     private static final long serialVersionUID = 6884405644795892262L;
@@ -75,9 +76,10 @@ class SimplestEventHandlingFrame extends JFrame {
 
 /**
  * Keeping a count of how many times the button has been clicked. Note that we
- * can't do this a lambda, because as we know passing a counter to lambda and
- * then incrementing it violates outside variable change in lambdas (veriable
- * effectively final). 
+ * can't do this with a lambda, because as we know passing a counter to lambda
+ * and then incrementing it violates outside variable change in lambdas
+ * (variable effectively final). Hence, we handle the event, using an anonymous
+ * class.
  */
 class JButtonClickedCounter extends JFrame {
     private static final long serialVersionUID = -7378073541409081941L;

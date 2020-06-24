@@ -6,6 +6,13 @@
     "configurations": [
         {
             "type": "java",
+            "name": "CodeLens (Launch) - basics",
+            "request": "launch",
+            "mainClass": "SwingLibrary.shapes_7.basics",
+            "projectName": "SampleJavaCodes"
+        },
+        {
+            "type": "java",
             "name": "CodeLens (Launch) - Partition",
             "request": "launch",
             "mainClass": "SampleJavaCodes.Streams.Collectors.Partition",
