@@ -1,10 +1,9 @@
 package SwingLibrary.components_5;
 
 import java.awt.Container;
+import java.awt.GridLayout;
 import java.awt.event.ActionEvent;
 import java.awt.event.KeyEvent;
-import java.beans.PropertyChangeListener;
-import java.awt.*;
 
 import javax.swing.AbstractAction;
 import javax.swing.Action;
@@ -40,6 +39,7 @@ class JButtonExamples {
         button.addActionListener((e) -> {
             System.exit(0);
         });
+        
         return button;
     }
 

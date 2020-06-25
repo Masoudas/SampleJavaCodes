@@ -6,6 +6,20 @@
     "configurations": [
         {
             "type": "java",
+            "name": "CodeLens (Launch) - JLabelExample",
+            "request": "launch",
+            "mainClass": "SwingLibrary.components_5.JLabelExample",
+            "projectName": "SampleJavaCodes"
+        },
+        {
+            "type": "java",
+            "name": "CodeLens (Launch) - UsingAction",
+            "request": "launch",
+            "mainClass": "SwingLibrary.components_5.UsingAction",
+            "projectName": "SampleJavaCodes"
+        },
+        {
+            "type": "java",
             "name": "CodeLens (Launch) - JButtonExamples",
             "request": "launch",
             "mainClass": "SwingLibrary.components_5.JButtonExamples",
