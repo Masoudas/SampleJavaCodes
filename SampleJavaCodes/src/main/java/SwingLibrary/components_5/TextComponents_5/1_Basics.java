@@ -18,7 +18,8 @@ package SwingLibrary.components_5.TextComponents_5;
  * JTextArea. Note that being plain implies that the entire text has the same
  * format (bold for example).
  * 
- * - styledTextComponents: JEditorPane, JTextArea are both styled.
+ * - styledTextComponents: JEditorPane, JTextArea are both styled (meaning format
+ * of some elements can be different from others within the same environment).
  * 
  * All Swing components, including Swing text components, are based on a
  * model-view-controller (MVC) pattern. An MVC pattern uses three components: a
