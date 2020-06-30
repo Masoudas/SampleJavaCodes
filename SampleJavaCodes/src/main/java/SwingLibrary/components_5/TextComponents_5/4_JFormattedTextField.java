@@ -1,5 +1,14 @@
 package SwingLibrary.components_5.TextComponents_5;
 
+import java.awt.*;
+import java.text.ParseException;
+import java.text.SimpleDateFormat;
+
+import javax.swing.JFormattedTextField;
+import javax.swing.JFrame;
+import javax.swing.text.DateFormatter;
+import javax.swing.text.MaskFormatter;
+
 /**
  * A JFormattedTextField is a JTextField with the following two additional
  * capabilities:
@@ -34,7 +43,11 @@ package SwingLibrary.components_5.TextComponents_5;
  * the current locale format:
  * 
  * JFormattedTextField salaryField = new JFormattedTextField();
- * salaryField.setValue(new Double(11233.98));
+ * salaryField.setValue(new Double(11233.98)); It should be noted that Double is
+ * not a formatter. It's just a value that can be displayed. However, for some
+ * reason a formatter is set and in the PropertyChangeListener, we see that a
+ * number is set, a true is returned, and that when we press enter, the actual
+ * value is returned (I think it's better to use mask formatter in any case).
  * 
  * You can also create a JFormattedTextField with a formatter. You need to use
  * the DateFormatter, NumberFormatter, and MaskFormatter classes to format a
@@ -43,16 +56,16 @@ package SwingLibrary.components_5.TextComponents_5;
  * 
  * // Have a field to format a date in mm/dd/yyyy format
  * 
- * DateFormat dateFormat = new SimpleDateFormat("mm/dd/yyyy"); 
- * DateFormatter dateFormatter = new DateFormatter(dateFormat); dobField = new
+ * DateFormat dateFormat = new SimpleDateFormat("mm/dd/yyyy"); DateFormatter
+ * dateFormatter = new DateFormatter(dateFormat); dobField = new
  * JFormattedTextField(dateFormatter);
  * 
- * // Have field to format a number in $#0,000.00 format 
- * NumberFormat numFormat = new DecimalFormat("$#0,000.00"); 
- * NumberFormatter numFormatter = new NumberFormatter(numFormat); 
- * salaryField = new JFormattedTextField(numFormatter);
+ * // Have field to format a number in $#0,000.00 format NumberFormat numFormat
+ * = new DecimalFormat("$#0,000.00"); NumberFormatter numFormatter = new
+ * NumberFormatter(numFormat); salaryField = new
+ * JFormattedTextField(numFormatter);
  * 
- * With mask formatter, we can define a custom representation of a string. We 
+ * With mask formatter, we can define a custom representation of a string. We
  * then need to use special chars to create a string format:
  * 
  * # : A number
@@ -71,16 +84,59 @@ package SwingLibrary.components_5.TextComponents_5;
  * 
  * Here's how we create a mask formatter, which accepts ###-##-####
  * 
- * MaskFormatter ssnFormatter = null; 
- * JFormattedTextField ssnField = null;
- * try { 
- *  ssnFormatter = new MaskFormatter("###-##-####");
- *  ssnField = new JFormattedTextField(ssnFormatter);
- * }
-    catch (ParseException e) {
-        e.printStackTrace();
-    }
+ * MaskFormatter ssnFormatter = null; JFormattedTextField ssnField = null; try {
+ * ssnFormatter = new MaskFormatter("###-##-####"); ssnField = new
+ * JFormattedTextField(ssnFormatter); } catch (ParseException e) {
+ * e.printStackTrace(); }
+ * 
+ * Use setPlaceholderCharacter of the formatter to place the character that you
+ * like in the place of special characters (like sharp here).
+ * 
+ * You can use the setFormatterFactory() method of JFormattedTextField to change
+ * the formatter after you have created the component. For example, to set a
+ * date format to a JFormattedTextField named payDate, after you have created
+ * it, you write DateFormatter df = new DateFormatter(new
+ * SimpleDateFormat("mm/dd/yyyy")); DefaultFormatterFactory dff = new
+ * DefaultFormatterFactory(df, df, df, df); dobField.setFormatterFactory(dff);
  */
 class JFormattedTextFieldExample {
+    public static void main(String[] args) {
+        JFrame frame = new JFrame();
+        frame.setDefaultCloseOperation(JFrame.EXIT_ON_CLOSE);
 
+        Container contentPane = frame.getContentPane();
+        contentPane.setLayout(new GridLayout(2, 0));
+
+        SimpleDateFormat format = new SimpleDateFormat("dd/mm/yyyy");
+        DateFormatter formatter = new DateFormatter(format);
+        JFormattedTextField textField = new JFormattedTextField(formatter);
+
+        JFormattedTextField NA = new JFormattedTextField(new Double("1.70"));
+
+        JFormattedTextField NA1 = null;
+        try {
+            MaskFormatter mask = new MaskFormatter("#.####");
+            NA1 = new JFormattedTextField(mask);
+        } catch (ParseException e) {
+        }
+        NA1.setValue(1.5555);
+
+        contentPane.add(textField);
+        contentPane.add(NA);
+        contentPane.add(NA1);
+
+        textField.addPropertyChangeListener((t) -> {
+            System.out.println(t.getNewValue());
+        });
+        NA.addPropertyChangeListener((t) -> {
+            System.out.println(t.getNewValue());
+        });
+        NA1.addPropertyChangeListener((t) -> {
+            System.out.println(t.getNewValue());
+        });
+
+        frame.pack();
+        frame.setVisible(true);
+
+    }
 }

@@ -12,7 +12,7 @@ import javax.swing.text.Document;
 import javax.swing.text.PlainDocument;
 
 /**
- * This is the class that we would be using ,ost often, because it displays one
+ * This is the class that we would be using most often, because it displays one
  * line of plain text.
  * 
  * We can construct with a string (The string specifies the initial text),
