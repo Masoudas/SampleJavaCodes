@@ -5,8 +5,10 @@ import java.text.ParseException;
 import java.text.SimpleDateFormat;
 
 import javax.swing.JFormattedTextField;
+import javax.swing.JFormattedTextField.AbstractFormatter;
 import javax.swing.JFrame;
 import javax.swing.text.DateFormatter;
+import javax.swing.text.DefaultFormatterFactory;
 import javax.swing.text.MaskFormatter;
 
 /**
@@ -27,6 +29,10 @@ import javax.swing.text.MaskFormatter;
  * formatter factory. A java.text.Format object defines the format of an object
  * in a string form. That is, it defines how an object looks as a string; for
  * example, a date object in mm/dd/yyyy format would look like 07/09/2008.
+ * 
+ * A formatter is represented by a JFormattedTextField.AbstractFormatter object
+ * and it uses a java.text.Format object to format an object. Its job is to
+ * convert an object to a string and a string back to an object
  * 
  * A formatter factory is a collection of formatters. A JFormattedTextField uses
  * a formatter factory to get a formatter of a specific type. A formatter
@@ -99,6 +105,10 @@ import javax.swing.text.MaskFormatter;
  * SimpleDateFormat("mm/dd/yyyy")); DefaultFormatterFactory dff = new
  * DefaultFormatterFactory(df, df, df, df); dobField.setFormatterFactory(dff);
  */
+
+/**
+ * VERY IMPORTANT: See also 6_ValidatingInputText.java
+ */
 class JFormattedTextFieldExample {
     public static void main(String[] args) {
         JFrame frame = new JFrame();
@@ -140,3 +150,43 @@ class JFormattedTextFieldExample {
 
     }
 }
+
+/**
+ * A JFormattedTextField allows you to specify four types of formatters:
+ * 
+ * 1- A null formatter: It is used when the value in the field is null.
+ * 
+ * 2- An edit Formatter: It is used when the field has focus.
+ * 
+ * 3- A display Formatter: It is used when the field does not have focus and it
+ * has a non-null value.
+ * 
+ * 4- A default Formatter: It is used in the absence of any of the above three
+ * formatters.
+ * 
+ * You can specify all four formatters by using a formatter factory in the
+ * constructor of the JFormattedTextField class or calling its
+ * setFormatterFactory() method. An instance of the JFormattedTextField.
+ * AbstractFormatterFactory abstract class represents a formatter factory. The
+ * javax.swing.text. DefaultFormatterFactory class is an implementation of the
+ * JFormattedTextField.AbstractFormatterFactory class. When you specify a
+ * formatter, the same formatter is used in place of four formatters. When you
+ * specify a formatter factory, you have the ability to specify different
+ * formatters for four different situations
+ * 
+ * So in the following class, we use the default formatter factory to define all
+ * four of the formatters.
+ */
+class FormatterFactoryExample extends JFormattedTextField.AbstractFormatterFactory {
+
+    @Override
+    public AbstractFormatter getFormatter(JFormattedTextField tf) {
+        DateFormatter format1 = new DateFormatter(new SimpleDateFormat("dd/mm/yyyy"));
+        DateFormatter format2 = new DateFormatter(new SimpleDateFormat("yyyy/mm/dd"));
+
+        DefaultFormatterFactory factory = new DefaultFormatterFactory(format1, format2, format1, format1);
+
+        return null;
+    }
+}
+
