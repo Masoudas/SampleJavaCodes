@@ -6,6 +6,20 @@
     "configurations": [
         {
             "type": "java",
+            "name": "CodeLens (Launch) - JSpinnerExample",
+            "request": "launch",
+            "mainClass": "SwingLibrary.components_5.JSpinner.JSpinnerExample",
+            "projectName": "SampleJavaCodes"
+        },
+        {
+            "type": "java",
+            "name": "CodeLens (Launch) - ButtonGroupExample",
+            "request": "launch",
+            "mainClass": "SwingLibrary.components_5.ChoiceComponents_6.ButtonGroupExample",
+            "projectName": "SampleJavaCodes"
+        },
+        {
+            "type": "java",
             "name": "CodeLens (Launch) - ValidatingInputText",
             "request": "launch",
             "mainClass": "SwingLibrary.components_5.TextComponents_5.ValidatingInputText",

@@ -1,6 +1,11 @@
 package SwingLibrary.components_5.ChoiceComponents_6;
 
+import java.awt.Container;
+
+import javax.swing.Box;
+import javax.swing.ButtonGroup;
 import javax.swing.JCheckBox;
+import javax.swing.JFrame;
 import javax.swing.JRadioButton;
 import javax.swing.JToggleButton;
 
@@ -56,17 +61,57 @@ class CreatingChoices {
 
     }
 
-    /**
-     * If the selection is mutually exclusive, you must group all your choices in a
-     * button group. In a mutually exclusive group of choices, if you select one
-     * choice, all other choices are unselected. Typically, you create a button
-     * group for a group of mutually exclusive JRadioButtons or JToggleButtons.
-     * Theoretically, you can also create a button group for JCheckBoxes to have
-     * mutually exclusive choices. However, it is not recommended to use a group of
-     * mutually exclusive JCheckBoxes in a GUI.
-     * 
-     */
-    private void groupingChoices() {
+}
 
+/**
+ * If the selection is mutually exclusive, you must group all your choices in a
+ * button group. In a mutually exclusive group of choices, if you select one
+ * choice, all other choices are unselected. Typically, you create a button
+ * group for a group of mutually exclusive JRadioButtons or JToggleButtons.
+ * Theoretically, you can also create a button group for JCheckBoxes to have
+ * mutually exclusive choices. However, it is not recommended to use a group of
+ * mutually exclusive JCheckBoxes in a GUI.
+ * 
+ * Note that ButtonGroup is actually not a component, but just a means of
+ * grouping a set of buttons. If we want to add the buttons as a component, we
+ * should rather use a box for example.
+ * 
+ */
+class ButtonGroupExample extends JFrame {
+    private static final long serialVersionUID = 648891176483141267L;
+
+    ButtonGroup group = new ButtonGroup();
+    JRadioButton b1 = new JRadioButton("Male");
+    JRadioButton b2 = new JRadioButton("Female");
+    JRadioButton b3 = new JRadioButton("Unknown");
+
+    protected void initFrame() {
+        this.setDefaultCloseOperation(JFrame.EXIT_ON_CLOSE);
+
+        b1.setSelected(false);
+        group.add(b1);
+        group.add(b2);
+        group.add(b3);
+
+
+        Container contentPane = this.getContentPane();
+        Box box = Box.createVerticalBox();
+        box.add(b1);
+        box.add(b2);
+        box.add(b3);
+
+        contentPane.add(box);
+
+        this.pack();
+    }
+
+    public ButtonGroupExample(){
+        initFrame();
+    }
+
+    public static void main(String[] args) {
+        ButtonGroupExample example = new ButtonGroupExample();
+
+        example.setVisible(true);
     }
 }
