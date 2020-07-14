@@ -1,4 +1,4 @@
-package SwingLibrary.components_5.JSpinner;
+package SwingLibrary.components_5.JSpinner_7;
 
 import java.awt.BorderLayout;
 import java.awt.Container;
@@ -21,6 +21,9 @@ import javax.swing.SpinnerNumberModel;
  * SpinnerDateModel
  * 
  * SpinnerListModel
+ * 
+ * Accessing the spinner value can be through the getValue method, or the
+ * getNumber for the number model for example.
  */
 class JSpinnerExample extends JFrame {
     protected void initFrame() {
@@ -51,6 +54,10 @@ class JSpinnerExample extends JFrame {
         contentPane.add(spinner);
         contentPane.add(spinnerDate, BorderLayout.EAST);
         contentPane.add(listSpinner, BorderLayout.WEST);
+
+        // For reading the choice in the spinner
+        System.out.println(channelModel.getNumber());
+        System.out.println(listSpinner.getValue());
         
         this.pack();
     }
