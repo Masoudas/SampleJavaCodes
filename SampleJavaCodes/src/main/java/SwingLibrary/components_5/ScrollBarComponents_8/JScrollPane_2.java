@@ -1,5 +1,6 @@
 package SwingLibrary.components_5.ScrollBarComponents_8;
 
+import javax.swing.JFrame;
 import javax.swing.JScrollPane;
 import javax.swing.JTextArea;
 
@@ -51,14 +52,22 @@ import javax.swing.JTextArea;
  */
 class JScrollPaneExample {
     public static void main(String[] args) {
+        JFrame frame = new JFrame();
+        frame.setDefaultCloseOperation(JFrame.EXIT_ON_CLOSE);
+
         JTextArea textArea = new JTextArea();
+        textArea.setSize(100, 100);
+
         JScrollPane scrollPane = new JScrollPane(textArea); // Adding the component for viewport.
+        scrollPane.setVerticalScrollBarPolicy(JScrollPane.VERTICAL_SCROLLBAR_AS_NEEDED);
+        scrollPane.setHorizontalScrollBarPolicy(JScrollPane.HORIZONTAL_SCROLLBAR_AS_NEEDED);
+        scrollPane.setSize(30, 30);
 
-        JScrollPane scrollPane2 = new JScrollPane(JScrollPane.HORIZONTAL_SCROLLBAR_AS_NEEDED,
-                JScrollPane.VERTICAL_SCROLLBAR_ALWAYS);
-        scrollPane2.setViewportView(textArea);
+        frame.getContentPane().add(scrollPane);
 
-        
+        frame.pack();
+
+        frame.setVisible(true);
 
     }
 
