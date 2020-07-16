@@ -27,7 +27,6 @@ class Basics_1 {
         slider.setMaximum(10);
         slider.setValue(4);
         
-        slider.
 
         int currentValue = slider.getValue();
 
