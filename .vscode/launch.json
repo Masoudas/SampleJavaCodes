@@ -6,6 +6,13 @@
     "configurations": [
         {
             "type": "java",
+            "name": "CodeLens (Launch) - JMenuFrame",
+            "request": "launch",
+            "mainClass": "SwingLibrary.components_5.JMenu.JMenuFrame",
+            "projectName": "SampleJavaCodes"
+        },
+        {
+            "type": "java",
             "name": "CodeLens (Launch) - JPopupMenu_2",
             "request": "launch",
             "mainClass": "SwingLibrary.components_5.JMenu.JPopupMenu_2",
