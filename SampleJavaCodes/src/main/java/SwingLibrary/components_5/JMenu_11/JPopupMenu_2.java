@@ -1,4 +1,4 @@
-package SwingLibrary.components_5.JMenu;
+package SwingLibrary.components_5.JMenu_11;
 
 import java.awt.BorderLayout;
 import java.awt.Container;
