@@ -61,6 +61,7 @@ class JScrollPaneExample {
         JScrollPane scrollPane = new JScrollPane(textArea); // Adding the component for viewport.
         scrollPane.setVerticalScrollBarPolicy(JScrollPane.VERTICAL_SCROLLBAR_AS_NEEDED);
         scrollPane.setHorizontalScrollBarPolicy(JScrollPane.HORIZONTAL_SCROLLBAR_AS_NEEDED);
+        // scrollPane.setViewport(viewport); How we put the component.
         scrollPane.setSize(30, 30);
 
         frame.getContentPane().add(scrollPane);

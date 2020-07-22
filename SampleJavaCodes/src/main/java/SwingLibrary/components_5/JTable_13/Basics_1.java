@@ -1,6 +1,7 @@
 package SwingLibrary.components_5.JTable_13;
 
 import java.awt.BorderLayout;
+import java.io.File;
 
 import javax.swing.JFrame;
 import javax.swing.JTable;
@@ -9,17 +10,18 @@ import javax.swing.table.JTableHeader;
 
 /**
  * An environment for creating and editing tables. You can set column names, and
- * sort data at runtime. javax.swing.table is package dedicated to tables
+ * sort data at runtime. javax.swing.table is a package dedicated to tables
  * (because it's so complex and powerful).
  * 
  * JTable does not store data, only displays it (like Text classes). TableModel
  * interface is the model. DefaultTableModel is the default model. To add and
  * remove columns, we work with the model.
  * 
- * By default, you can double click on a cell and edit it.
+ * With the DefaultTableModel, you can double click on a cell and edit it.
  * 
- * The column header can be taken from the table separately, and then be held so
- * that as we scroll through the table, the header column remains fixed.
+ * The title header can be taken from the table separately, and played with
+ * separately, so that for example as we scroll through the table, the header
+ * remains fixed on top of the container.
  * 
  * The easiest way to use header column is with the constructor of the JTable.
  * Other than that, setColumnIdentifiers in the default model does the job.
@@ -37,6 +39,7 @@ class FirstJTable {
         model.setColumnCount(5);
         model.setRowCount(10);
         model.setValueAt("Polarization 0", 0, 0);
+        model.setValueAt(new File("c:/"), 1, 1); // Because it uses the toString method
         model.setColumnIdentifiers(new String[] { "Column1", "Column2", "Column3" });
 
         JTableHeader tableHeader = table.getTableHeader();
