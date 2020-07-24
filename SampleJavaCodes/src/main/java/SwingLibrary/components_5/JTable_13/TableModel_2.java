@@ -23,7 +23,12 @@ import javax.swing.table.AbstractTableModel;
  * said string instead, it would've left aligned it (as it did string columns).
  * 
  * Note: Basically with a JScrollPane, the header always remains on top when you
- * move the table, so no need to do anything on that front!
+ * scroll through the table, so no need to do anything on that front!
+ * 
+ * Note that the problem with this scheme is that it does not allow deleting or adding rows,
+ * For that, we better inherit from DefaultTableModel.
+ * 
+ * 
  * 
  */
 class CustomTableModel extends AbstractTableModel {
@@ -75,7 +80,7 @@ class CustomTableModel extends AbstractTableModel {
 
 }
 
-class FrameWithCustomTableModel {
+class JtableWithCustomTableModel {
     public static void main(String[] args) {
         JTable table = new JTable(new CustomTableModel());
 
