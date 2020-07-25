@@ -1,3 +1,12 @@
+/**
+ * Summary: Wild card argument or ?, means any type essentially! 
+ * 
+ * Bounded wild card ? extends AClass means any type that extends AClass.
+ * 
+ * What's the difference between method(AClass<?> obj) and method(AClass<Object> obj)?
+ * Nothing, but the first is what is recommended by Java.
+ */
+
 /*
 Suppose we define an averageCalculator class, and we want to check whether two arrays
 yield the same average.
@@ -75,15 +84,15 @@ public void isSame(AvCalculator<? super Number>){} // Erasure
 
 package SampleJavaCodes.Generics;
 
-class AvCalculator<T extends Number>{
+class AvCalculator<T extends Number> {
     T[] t;
-    
-    public AvCalculator(T[] t){
+
+    public AvCalculator(T[] t) {
         this.t = t;
 
     }
 
-    public double getAverage(){
+    public double getAverage() {
         return this.calcAvrg(this.t);
     }
 
@@ -96,35 +105,34 @@ class AvCalculator<T extends Number>{
         }
 
         return average / t.length;
-        
+
     }
 
-    public boolean isSame(AvCalculator<?> t){
+    public boolean isSame(AvCalculator<?> t) {
         return this.getAverage() == t.getAverage() ? true : false;
     }
 
-    public boolean isSame(AvCalculator<? extends Double> t, String str){
+    public boolean isSame(AvCalculator<? extends Double> t, String str) {
         // In this method, we bind from above.
         System.out.println(str);
         return this.getAverage() == t.getAverage() ? true : false;
     }
 
-    public boolean isSame(AvCalculator<? super Float> t, int str){
+    public boolean isSame(AvCalculator<? super Float> t, int str) {
         // In this method, we bind from below.
         return false;
     }
 
     public static void main(String[] args) {
-        Integer[] arr = {1, 2, 3};
-        Double[] arr1 = {1.0, 2.0, 3.0};
+        Integer[] arr = { 1, 2, 3 };
+        Double[] arr1 = { 1.0, 2.0, 3.0 };
 
         AvCalculator<Integer> avrCal = new AvCalculator<Integer>(arr);
         AvCalculator<Double> avrCal1 = new AvCalculator<Double>(arr1);
-        
-        System.out.println(avrCal.isSame(avrCal1)); 
-        System.out.println(avrCal.isSame(avrCal1, "Using the bounded wild card")); 
+
+        System.out.println(avrCal.isSame(avrCal1));
+        System.out.println(avrCal.isSame(avrCal1, "Using the bounded wild card"));
 
     }
 
 }
-

@@ -1,14 +1,22 @@
 package SampleJavaCodes.Generics.TypeErasure;
 
 /**
+ * Generics were introduced to the Java language to provide tighter type checks
+ * at COMPILE TIME and to support generic programming.
+ * 
  * What is type erasure? Obviously it has something to do with erasing the type
  * (of a generic). It means a generic type is replaced by its upper bound (i.e,
- * if we specified a bound by that, otherwise by Object). This would allow not
- * to impose any additional runtime burdon. In a way it does make sense, because
- * after all if we use a generic and we define an upperbound, that bound is
- * there to ensure that we have access to some methods (which are obviously in
- * the bound). Therefore from the compiler point of view, it completely makes
- * sense to just replace the generic with the upper bound.
+ * if we specified a bound by that, otherwise by Object) at compile time. We say
+ * that it's compile time because while the code is compiled, it is replaced by
+ * upper bound it is checked that for example if a method is used from the
+ * bounded type, it in fact exists. Then obiously at runtime, we have replaced
+ * it with upper bound if we did at compile time.
+ * 
+ * This would allow not to impose any additional runtime burdon. It does make
+ * sense, because after all if we use a generic and we define an upperbound,
+ * that bound is there to ensure that we have access to some methods (which are
+ * obviously in the bound). Therefore from the compiler point of view, it
+ * completely makes sense to just replace the generic with the upper bound.
  * 
  * Officially Oracle says Java applies type erasure to ensure that:
  * 
@@ -29,7 +37,6 @@ package SampleJavaCodes.Generics.TypeErasure;
  */
 
 class Node<T> {
-
     private T data;
     private Node<T> next;
 
@@ -42,11 +49,12 @@ class Node<T> {
         return data;
     }
     // ...
+
 }
 
 /**
  * Because the type parameter T is unbounded, the Java compiler replaces it with
- * Object:
+ * Object (again, at compile time):
  */
 
 class NodeAsImplementedByJVM {
@@ -89,11 +97,12 @@ class Node1<T extends Comparable<T>> {
 /**
  * The Java compiler replaces the bounded type parameter T with the first bound
  * class, Comparable: (Me: The question is though, what happens to Comparable?
- * Below for example Comparable is wiggly? Well, wouldn't it be replaced by
- * Object? I guess so. Then again, T extends Comparable<T> implies the same
- * logic, doesn't it? Because after all, T is bounded by comparable, which is
- * just an interface, but its own type (be it integer or whatever) is unknown.
- * We just know that it provides a comparable method.)
+ * Because it is in and of itself a generic type. The answer is that comparable
+ * in the original declaration T extends Comparable<T> works on objects! Why?
+ * Because we have Comparable<T>, and T is not bounded by anything other than
+ * this interface, not a rigorous type like string. Hence, Comparable uses
+ * object. But if it were like <T extends String, Comparable<T>>, Comparable
+ * would be implemented with String. )
  */
 
 class Node1ByJEM {
@@ -110,6 +119,18 @@ class Node1ByJEM {
         return data;
     }
     // ...
+}
+
+/**
+ * Note that with this baby,T would be both of the type Number and comparable.
+ * But then again, what happens to the Com
+ * 
+ * @param <T>
+ */
+class Node2<T extends Number & Comparable<T>> {
+    T t; // I imagine this would be a reference to both comparable and number.
+         // We know the reference to the number part fine,
+         // but then again, the Comparable part has to be related to Number,
 }
 
 /**
