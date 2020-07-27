@@ -3,8 +3,10 @@
  * 
  * Bounded wild card ? extends AClass means any type that extends AClass.
  * 
- * What's the difference between method(AClass<?> obj) and method(AClass<Object> obj)?
- * Nothing, but the first is what is recommended by Java.
+ * What's the difference between method(AClass<?> obj) and method(AClass<Object> obj) and method(AClass obj)?
+ * The first is what is recommended by Java. The second one causes compile time
+ * errors, becuase it forces the raw type to be object (hence, not all types can't be assigned 
+ * to it), third one is the same as first, but not recommended.
  */
 
 /*

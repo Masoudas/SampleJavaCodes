@@ -32,6 +32,15 @@ package SampleJavaCodes.Generics.TypeErasure;
  * and replaces each with its first bound if the type parameter is bounded,or
  * Object if the type parameter is unbounded.
  * 
+ * NOTE: Type erausure happens regardless of how we instantiate the class.
+ * This is why we can assign a generic class to its raw type ALL THE TIME.
+ * So for the node example, even if I say new Node<Integer>, the underlying 
+ * implementation is still Node<Object>. This does not however mean we can
+ * say Node<Object> node = new Node<Integer>(), because the compiler checks
+ * against this cast (this is why we used generics in the first place!) The only
+ * way this is possible is through raw types, saying Node = new Node<Integer>()!!!
+ * So while the premise is correct, we can't do this cast due to compiler checks.
+ * 
  * Consider the following generic class that represents a node in a singly
  * linked list:
  */
@@ -50,6 +59,9 @@ class Node<T> {
     }
     // ...
 
+    public static void main(String[] args) {
+        // Node<Object> node = new Node<Integer>(1, null); Why is this expression incorrect?
+    }
 }
 
 /**
