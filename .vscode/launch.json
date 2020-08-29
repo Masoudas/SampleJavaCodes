@@ -6,9 +6,29 @@
     "configurations": [
         {
             "type": "java",
+<<<<<<< HEAD
+            "name": "CodeLens (Launch) - FirstJTable",
+            "request": "launch",
+            "mainClass": "SwingLibrary.components_5.JTable_13.FirstJTable",
+            "projectName": "SampleJavaCodes"
+        },
+        {
+            "type": "java",
+            "name": "CodeLens (Launch) - Basics_1",
+            "request": "launch",
+            "mainClass": "SwingLibrary.components_5.JToolBar_12.Basics_1",
+            "projectName": "SampleJavaCodes"
+        },
+        {
+            "type": "java",
+            "name": "CodeLens (Launch) - JMenuFrame",
+            "request": "launch",
+            "mainClass": "SwingLibrary.components_5.JMenu.JMenuFrame",
+=======
             "name": "CodeLens (Launch) - BaeldungIntroduction",
             "request": "launch",
             "mainClass": "SampleJavaCodes.ThreadManagement.ExecuterServices.BaeldungIntroduction",
+>>>>>>> 6302eb155afc495a1fded2beb3ba9536ce150a81
             "projectName": "SampleJavaCodes"
         },
         {
